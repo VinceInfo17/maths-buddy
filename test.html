@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Maths Buddy</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/css/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="assets/css/ie/respond.min.js"></script><![endif]-->
+	</head>
+	<body>
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Maths Buddy</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/css/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="assets/css/ie/respond.min.js"></script><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<!--<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>-->
+							<h1 id="title">Maths Buddy</h1>
+							<p>ITII Picardie</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+
+								Prologue's nav expects links in one of two formats:
+
+								1. Hash link (scrolls to a different section within the page)
+
+											<li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+											<li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+							-->
+							<ul>
+								<li><a href="index.html#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
+								<li><a href="index.html#manuel" id="manuel-link" class="skel-layers-ignoreHref"><span class="icon fa-book">Manuel</span></a></li>
+								<li><a href="#maths" id="maths-link" class="skel-layers-ignoreHref"><span class="icon fa-calculator">Outils mathématiques</span></a></li>
+								<li><a href="index.html#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">À propos</span></a></li>
+								<li><a href="index.html#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Manuel -->
+				<section id="maths" class="one dark cover" style="padding-top:2em; padding-bottom:.5em;">
+					<div class="container" style="vertical-align:middle;">
+						<header>
+							<h2 class="alt">Outils mathématiques</h2>
+						</header>
+					</div>
+				</section>
+
+				<!-- Equation du second degré -->
+				<section id="second-degré" class="two">
+					<div class="container">
+						<header>
+							<h3>Équation du second degré</h3>
+						</header>
+						<p>Calcul d'une équation du second degré</p>
+						<form method="post" action="#">
+							<div>
+									<div id="table-second-degre">
+									<table>
+										<td style="width:20%;">
+											<input type="text" name="x2" placeholder="x²"/>
+										</td>
+										<td style="width:14%;">
+											<span class="input-table-text">x² +</span>
+										</td>
+										<td style="width:20%;">
+											<input type="text" name="x" placeholder="x"/>
+										</td>
+										<td style="width:10%;">
+											<span class="input-table-text">x +</span>
+										</td>
+										<td style="width:20%;">
+											<input type="text" name="c" placeholder="C"/>
+										</td>
+											<td style="width:10%;">
+												<span class="input-table-text">= 0</span>
+												</td>
+											</table>
+										</div>
+								<div class="12u$">
+									<input type="submit" value="Envoyer !" />
+								</div>
+							</div>
+						</form>
+					</div>
+					</section>
+
+					<!-- Statistiques -->
+					<section id="statistiques" class="three">
+						<div class="container">
+							<header>
+								<h3>Statistiques</h3>
+							</header>
+							<p>Calcul de moyenne et d'écart type</p>
+							<form method="post" action="#">
+								<div>
+									<div style="padding-bottom: 5em;">
+										<div id="add-div-statistiques">
+										</div>
+										<a class="button scrolly button-add-statistiques" style="float: right; padding-top: 0.368em; padding-bottom: 0.368em;padding-left:0.7018em;padding-right:0.7018em;font-size:1.5em;">+</a>
+										<div style="padding-right: .5em;padding-bottom:2em;position:absolute;width:62%;">
+											<input type="text" name="statistiques_numero_1" id="statistiques_numero_1" placeholder="Nombre" style="width:100%"/>
+											</div>
+											<input type="hidden" value="1" name="nombre_vars_statistiques" id="nombre_vars_statistiques"/>
+									</div>
+									<div class="12u$">
+										<input type="submit" value="Envoyer !" id="send-button-statistiques"/>
+									</div>
+								</div>
+							</form>
+						</div>
+						</section>
+
+						<!-- Loi binomiale -->
+						<section id="loi-binomiale" class="four">
+							<div class="container">
+								<header>
+									<h3>Loi binomiale</h3>
+								</header>
+								<p>Calcul de la loi binomiale</p>
+								<form method="post" action="#">
+									<div>
+										<div style="width:100%;">
+											<table>
+												<tr class="spaceUnder">
+													<td>
+														<input type="text" name="n" placeholder="N"/>
+													</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="text" name="p" placeholder="P"/>
+												</td>
+											</tr>
+											</table>
+										</div>
+										<div class="12u$">
+											<input type="submit" value="Envoyer !" />
+										</div>
+									</div>
+								</form>
+							</div>
+							</section>
+
+							<!-- Loi normale -->
+							<section id="loi-normale" class="three">
+								<div class="container">
+									<header>
+										<h3>Loi normale</h3>
+									</header>
+									<p>Calcul de la loi normale</p>
+									<form method="post" action="#">
+										<div>
+											<div>
+												<table>
+													<tr>
+														<td style="border-right: 10px solid transparent;-webkit-background-clip: padding;-moz-background-clip: padding;background-clip: padding-box;">
+															<input type="text" name="esperance" placeholder="Espérance" style="width:100%" />
+														</td>
+														<td>
+															<input type="text" name="ecart-type" placeholder="Écart-type" style="width:100%" />
+														</td>
+												</tr>
+												</table>
+												<div id="type-saisie-loi-normale" class="type-saisie-radio">
+															<input type="radio" id="radio-type-saisie-loi-normale-1" name="radio-saisie-loi-normale" value="1" checked><label for="radio-type-saisie-loi-normale-1"><=</label>
+															<input type="radio" id="radio-type-saisie-loi-normale-2" name="radio-saisie-loi-normale" value="2"><label for="radio-type-saisie-loi-normale-2">>=</label>
+															<input type="radio" id="radio-type-saisie-loi-normale-3" name="radio-saisie-loi-normale" value="3"><label for="radio-type-saisie-loi-normale-3">x<=X<=x</label>
+															<input type="radio" id="radio-type-saisie-loi-normale-4" name="radio-saisie-loi-normale" value="3"><label for="radio-type-saisie-loi-normale-4">></label>
+												</div>
+											</div>
+											<div class="12u$">
+												<input type="submit" value="Envoyer !" />
+											</div>
+										</div>
+									</form>
+								</div>
+								</section>
+
+								<!-- Loi de poisson -->
+								<section id="loi-poisson" class="two">
+									<div class="container">
+										<header>
+											<h3>Loi de Poisson</h3>
+										</header>
+										<p>Calcul de la loi de Poisson</p>
+										<form method="post" action="#">
+											<div>
+												<div>
+													<div id="type-saisie-loi-poisson" class="type-saisie-radio">
+																<input type="radio" id="radio-type-loi-poisson-1" name="radio-saisie-loi-poisson" value="1" checked><label for="radio-type-loi-poisson-1">P & N</label>
+																<input type="radio" id="radio-type-loi-poisson-2" name="radio-saisie-loi-poisson" value="2"><label for="radio-type-loi-poisson-2">Lambda</label>
+													</div>
+													<table>
+														<tr>
+															<td style="border-right: 10px solid transparent;-webkit-background-clip: padding;-moz-background-clip: padding;background-clip: padding-box;">
+																<input type="text" name="esperance" placeholder="Espérance" style="width:100%" />
+															</td>
+															<td>
+																<input type="text" name="ecart-type" placeholder="Écart-type" style="width:100%" />
+															</td>
+													</tr>
+													</table>
+												</div>
+												<div class="12u$">
+													<input type="submit" value="Envoyer !" />
+												</div>
+											</div>
+										</form>
+									</div>
+									</section>
+
+
+		</div>
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>Pierre L. & Vincent T. All rights reserved.</li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollzer.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery-ui.min.js"></script>
+			<script src="assets/js/jquery.visible.min.js"></script>
+
+			<script>
+				$( "#type-saisie-loi-poisson" ).buttonset();
+				$( "#type-saisie-loi-normale" ).buttonset();
+
+
+		$('.button-add-statistiques').click(function() {
+			var currentVal = parseInt($("#nombre_vars_statistiques").val());
+				if (!isNaN(currentVal)) {
+								currentVal = currentVal + 1;
+								$("#nombre_vars_statistiques").val(currentVal);
+				}
+						$('#add-div-statistiques').append('<div id="add-otf-statistiques_'+currentVal+'"><a class="button scrolly button-remove-statistiques" onClick="$(this).Remove_Statistiques_Row('+currentVal+');" style="float: right; padding-top: 0.348em; padding-bottom: 0.388em;padding-left:0.792em;padding-right:0.792em;font-size:1.5em;">-</a><div style="padding-right: .5em;padding-bottom:2em;position:absolute;width:62%;"><input type="text" name="statistiques_numero_'+ currentVal +'" id="statistiques_numero_"'+ currentVal +' placeholder="Nombre" style="width:100%"/></div><br/><br/></div>');
+						if(!$('#send-button-statistiques').visible()) {
+							$("html, body").animate({ scrollTop: $('#send-button-statistiques').offset().top+-$(window).height()+130 }, 400);
+						}
+		});
+
+		$.fn.Remove_Statistiques_Row = function(id) {
+			var currentVal = parseInt($("#nombre_vars_statistiques").val());
+				if (!isNaN(currentVal)) {
+								currentVal = currentVal - 1;
+								$("#nombre_vars_statistiques").val(currentVal);
+				}
+				$(this).closest("#add-otf-statistiques_"+id).remove();
+				};
+		</script>
+	</body>
+</html>
+
+
+	</body>
+</html>

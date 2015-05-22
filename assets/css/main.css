@@ -1643,7 +1643,7 @@
 	}
 
 		a:hover {
-			color: #E27689;
+			color: #768CE2;
 			border-bottom-color: rgba(255, 255, 255, 0);
 		}
 
@@ -2083,7 +2083,7 @@
 		}
 
 			#nav ul li a.active span:before {
-				color: #e27689;
+				color: #768CE2;
 			}
 
 /* Footer */
@@ -2537,3 +2537,47 @@
 				}
 
 	}
+
+	/* My modification */
+
+	.input-table-text {
+		font-size: 1.4em;
+		top:0.08em;
+		position: relative;
+	}
+
+	tr.spaceUnder > td
+{
+  padding-bottom: 1em;
+}
+
+.input-table-radio {
+	font-size: 3em;
+	top:0.25em;
+	position: relative;
+}
+
+#table-second-degre {
+		width:76%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.type-saisie-radio {
+	font-size:1.3em;
+	margin-bottom:1em;
+}
+
+/* Mobile */
+@media only screen and (max-device-width: 700px) {
+	#table-second-degre {
+			width:100%;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	.type-saisie-radio {
+		font-size:0.9em;
+	}
+
+}
