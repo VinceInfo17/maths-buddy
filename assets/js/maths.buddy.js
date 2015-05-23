@@ -2,6 +2,41 @@
 	Maths Buddy JS
 */
 $(document).ready(function() {
+
+
+
+$(window).scroll(function () {
+     var anchor = document.location.hash;
+     if (anchor === '#maths') {
+      if($('#maths').visible()){
+       $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+       $("#maths-menu").addClass("active_jquery"); //Add "active" class to selected tab
+      }
+      }else{
+       if($('#top').visible()){
+        $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+        $("#top-menu").addClass("active_jquery"); //Add "active" class to selected tab
+       }else if ($('#manuel').visible()){
+        $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+        $("#manuel-menu").addClass("active_jquery"); //Add "active" class to selected tab
+       }else if($('#menu').visible()){
+        $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+        $("#menu-menu").addClass("active_jquery"); //Add "active" class to selected tab
+       }else if($('#webapp').visible()){
+        $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+        $("#webapp-menu").addClass("active_jquery"); //Add "active" class to selected tab
+       }else if($('#about').visible()){
+        $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+        $("#about-menu").addClass("active_jquery"); //Add "active" class to selected tab
+       }else if($('#contact').visible()){
+        $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+        $("#contact-menu").addClass("active_jquery"); //Add "active" class to selected tab
+       }
+      }
+});
+
+
+
     var anchor = document.location.hash;
     if (anchor === '#maths') {
         $("#maths_window").css({
@@ -10,6 +45,9 @@ $(document).ready(function() {
         $("#main_window").css({
             "display": "none"
         });
+        //Fix desynchro div - to be updated
+        $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+        $("#maths-menu").addClass("active_jquery"); //Add "active" class to selected tab
     } else {
         $("#maths_window").css({
             "display": "none"
@@ -30,6 +68,9 @@ $(document).ready(function() {
             $("#main_window").css({
                 "display": "none"
             });
+            //Fix desynchro div - to be updated
+            $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+            $("#maths-menu").addClass("active_jquery"); //Add "active" class to selected tab
         } else {
             $("#maths_window").css({
                 "display": "none"
