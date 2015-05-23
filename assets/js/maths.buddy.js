@@ -35,8 +35,6 @@ $(window).scroll(function () {
       }
 });
 
-
-
     var anchor = document.location.hash;
     if (anchor === '#maths') {
         $("#maths_window").css({
@@ -48,17 +46,24 @@ $(window).scroll(function () {
         //Fix desynchro div - to be updated
         $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
         $("#maths-menu").addClass("active_jquery"); //Add "active" class to selected tab
-    } else {
+        $("html, body").animate({
+            scrollTop: $(anchor).offset().top
+        }, 400);
+    } else if (anchor === '') {
+     $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+     $("#top-menu").addClass("active_jquery"); //Add "active" class to selected tab
+    }else{
         $("#maths_window").css({
             "display": "none"
         });
         $("#main_window").css({
             "display": "block"
         });
+        $("html, body").animate({
+            scrollTop: $(anchor).offset().top
+        }, 400);
     }
-    $("html, body").animate({
-        scrollTop: $(anchor).offset().top
-    }, 400);
+
     $(window).bind('hashchange', function(e) {
         var anchor = document.location.hash;
         if (anchor === '#maths') {
