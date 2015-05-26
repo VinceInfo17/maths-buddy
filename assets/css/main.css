@@ -2568,6 +2568,21 @@
 	margin-bottom:1em;
 }
 
+.sub-menu {
+	padding-top: 0px !important;
+	padding-bottom:0px !important;
+}
+
+.sub-menu-icon {
+	margin-left: 2.5em !important;
+	font-size:0.7em !important;
+	top:0.1em !important;
+}
+
+.sub-menu-text {
+	font-size:0.7em !important;
+}
+
 /* Mobile */
 @media only screen and (max-device-width: 700px) {
 	#table-second-degre {

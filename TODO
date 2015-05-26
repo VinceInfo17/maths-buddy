@@ -1,3 +1,5 @@
-- ANCHOR MENU LIVE -> ACTIVE
 - Fix Statistiques vertical size when resizing
 - Fix menu selected desynchro
+--- Firefox fixes
+  |- Menu - submenu active don't work
+	 |- Padding issues on "equation 2nd degré"

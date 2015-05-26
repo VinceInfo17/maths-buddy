@@ -39,28 +39,48 @@
 
                             -->
     <ul>
-     <li> <a class="skel-layers-ignoreHref" href="#top" id="top-menu"><span class="icon fa-home">Intro</span>
-                        </a> </li>
-     <li> <a class="skel-layers-ignoreHref" href="#manuel" id="manuel-menu"><span class="icon fa-book">Manuel</span>
-                        </a> </li>
-     <li> <a class="skel-layers-ignoreHref" href="#menu" id="menu-menu" style="padding-top: 0px;padding-bottom:0px;"><span class="icon fa-align-justify"
-                            style="margin-left: 2.5em;font-size:0.7em;top:0.2em;"></span>
-                            <span
-                            style="font-size:0.7em;">Menu</span>
-                        </a> </li>
-     <li> <a class="skel-layers-ignoreHref" href="#webapp" id="webapp-menu" style="padding-top: 0px;padding-bottom:0px;"><span class="icon fa-mobile-phone"
-                            style="margin-left: 1.8em;font-size:0.9em;top:-0.1em;"></span>
-                            <span
-                            style="font-size:0.7em;">WebApp (iOS)</span>
-                        </a> </li>
-     <li> <a class="skel-layers-ignoreHref" href="#maths" id="maths-menu"><span class="icon fa-calculator">Outils
-                        mathématiques</span>
-                        </a> </li>
-     <li> <a class="skel-layers-ignoreHref" href="#about" id="about-menu"><span class="icon fa-user">À
-                        propos</span>
-                        </a> </li>
-     <li> <a class="skel-layers-ignoreHref" href="#contact" id="contact-menu"><span class="icon fa-envelope">Contact</span>
-                        </a> </li>
+     <li>
+      <a class="skel-layers-ignoreHref" href="#top" id="top-menu"><span class="icon fa-home">Intro</span></a>
+     </li>
+     <li>
+      <a class="skel-layers-ignoreHref" href="#manuel" id="manuel-menu"><span class="icon fa-book">Manuel</span></a>
+     </li>
+     <li>
+      <a class="sub-menu skel-layers-ignoreHref" href="#menu" id="menu-menu"><span class="icon fa-align-justify sub-menu-icon"></span><span class="sub-menu-text">Menu</span></a>
+     </li>
+     <li>
+      <a class="sub-menu skel-layers-ignoreHref" href="#webapp" id="webapp-menu"><span class="icon fa-mobile-phone sub-menu-icon"></span><span class="sub-menu-text">WebApp (iOS)</span></a>
+     </li>
+     <li>
+      <a class="skel-layers-ignoreHref" href="#maths" id="maths-menu"><span class="icon fa-calculator">Outils mathématiques</span></a>
+     </li>
+     <li>
+      <a class="sub-menu skel-layers-ignoreHref" href="#second-degre" id="second-degre-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Équation second degré</span></a>
+     </li>
+     <li>
+      <a class="sub-menu skel-layers-ignoreHref" href="#statistiques" id="statistiques-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Statistiques</span></a>
+     </li>
+     <li>
+      <a class="sub-menu skel-layers-ignoreHref" href="#loi-binomiale" id="loi-binomiale-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Loi binomiale</span></a>
+     </li>
+     <li>
+      <a class="sub-menu skel-layers-ignoreHref" href="#loi-normale" id="loi-normale-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Loi normale</span></a>
+     </li>
+     <li>
+      <a class="sub-menu skel-layers-ignoreHref" href="#loi-poisson" id="loi-poisson-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Loi poisson</span></a>
+     </li>
+     <li>
+      <a class="sub-menu skel-layers-ignoreHref" href="#variable-aleatoire" id="variable-aleatoire-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Variable aléatoire</span></a>
+     </li>
+     <li>
+      <a class="sub-menu skel-layers-ignoreHref" href="#test-khi-2" id="test-khi-2-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Test de KHI 2</span></a>
+     </li>
+     <li>
+      <a class="skel-layers-ignoreHref" href="#about" id="about-menu"><span class="icon fa-user">À propos</span></a>
+     </li>
+     <li>
+      <a class="skel-layers-ignoreHref" href="#contact" id="contact-menu"><span class="icon fa-envelope">Contact</span></a>
+     </li>
     </ul>
    </nav>
   </div>
@@ -92,7 +112,7 @@
     </div>
    </section>
    <!-- Equation du second degré -->
-   <section class="two anchor_tags" id="second-degré">
+   <section class="two anchor_tags" id="second-degre">
     <div class="container">
      <header>
       <h3>Équation du second degré</h3>
@@ -134,9 +154,10 @@
      <form action="#" method="post">
       <div>
        <div style="padding-bottom: 5em;">
-        <div id="add-div-statistiques"></div> <a class="button button-add-statistiques" style="float: right; padding-top: 0.368em; padding-bottom: 0.368em;padding-left:0.7018em;padding-right:0.7018em;font-size:1.5em;">+</a>
+        <div id="add-div-statistiques"></div> <a class="button button-add-statistiques" style="float: right; padding-top: 12.5px; padding-bottom: 12.5px;padding-left:23.45px;padding-right:23.45px; font-size:1.5em;">+</a>
         <div style="padding-right: .5em;padding-bottom:2em;position:absolute;width:62%;">
-         <input id="statistiques_numero_1" name="statistiques_numero_1" placeholder="Nombre" style="width:100%" type="text"> </div>
+         <input id="statistiques_numero_1" name="statistiques_numero_1" placeholder="Nombre" style="width:100%" type="text">
+        </div>
         <input id="nombre_vars_statistiques" name="nombre_vars_statistiques" type="hidden" value="1"> </div>
        <div class="12u$">
         <input id="send-button-statistiques" type="submit" value="Envoyer !"> </div>
@@ -154,14 +175,16 @@
      <form action="#" method="post">
       <div>
        <div style="width:100%;">
-        <input name="n" placeholder="N" type="text">
         <table>
          <tr class="spaceUnder">
           <td>
-           <input name="p" placeholder="P" type="text"> </td>
+           <input name="n" placeholder="N" type="text">
+          </td>
          </tr>
          <tr>
-          <td></td>
+          <td>
+           <input name="p" placeholder="P" type="text">
+          </td>
          </tr>
         </table>
        </div>
@@ -227,7 +250,8 @@
           <tr class="spaceUnder">
            <td>
             <input id="lambda_poisson" name="lambda" placeholder="Lambda" style="display:none;" type="text">
-            <input id="p_poisson" name="p" placeholder="P" type="text"> </td>
+            <input id="p_poisson" name="p" placeholder="P" type="text">
+           </td>
           </tr>
           <tr>
            <td>
@@ -239,6 +263,57 @@
       </div>
       <div class="12u$">
        <input type="submit" value="Envoyer !"> </div>
+     </form>
+    </div>
+   </section>
+
+   <!-- Variable aléatoire d'une série statistique -->
+   <section class="three anchor_tags" id="variable-aleatoire">
+    <div class="container">
+     <header>
+      <h3>Variable aléatoire</h3>
+     </header>
+     <p>Variable aléatoire d'une série statistique</p>
+     <form action="#" method="post">
+      <div>
+       <div style="padding-bottom: 5em;">
+        <div id="add-div-v-aleatoire"></div>
+        <a class="button button-add-v-aleatoire" style="float: right; padding-top: 12.5px; padding-bottom: 12.5px;padding-left:23.45px;padding-right:23.45px; font-size:1.5em;">+</a>
+        <div style="padding-right: .5em;padding-bottom:2em;position:absolute;width:62%;">
+         <table>
+          <tr>
+           <td style="border-right: 10px solid transparent;-webkit-background-clip: padding;-moz-background-clip: padding;background-clip: padding-box;">
+            <input id="v_aleatoire_x_1" name="v_aleatoire_x_1" placeholder="X" style="width:100%" type="text">
+           </td>
+           <td>
+            <input id="v_aleatoire_proba_x_1" name="v_aleatoire_proba_x_1" placeholder="Probabilité de X" style="width:100%" type="text">
+           </td>
+          </tr>
+         </table>
+        </div>
+        <input id="nombre_vars_v_aleatoire" name="nombre_vars_v_aleatoire" type="hidden" value="1"> </div>
+       <div class="12u$">
+        <input id="send-button-v-aleatoire" type="submit" value="Envoyer !"> </div>
+      </div>
+     </form>
+    </div>
+   </section>
+
+   <!-- Test de KHI 2 -->
+   <section class="four anchor_tags" id="test-khi-2">
+    <div class="container">
+     <header>
+      <h3>Test de KHI 2</h3>
+     </header>
+     <p>Test de KHI 2</p>
+     <form action="#" method="post">
+      <div>
+
+
+
+       <div class="12u$">
+        <input id="send-button-khi-2" type="submit" value="Envoyer !"> </div>
+      </div>
      </form>
     </div>
    </section>
@@ -254,8 +329,9 @@
       <h3 class="alt">Bienvenue sur l'interface de Maths Buddy, un moyen simple et rapide de résoudre vos équations.</h3>
       <p>Ce projet est dans le cadre d'une formation ITII Picardie.</p>
      </header>
-     <footer> <a class="button scrolly" href="#manuel">Manuel
-                        d'utilisation</a> </footer>
+     <footer>
+      <a class="button scrolly" href="#manuel">Manuel d'utilisation</a>
+     </footer>
     </div>
    </section>
    <!-- Manuel -->
