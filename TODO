@@ -1,5 +1,8 @@
 - Fix Statistiques vertical size when resizing
-- Fix menu selected desynchro
+- Fix overflow footer menu
 --- Firefox fixes
   |- Menu - submenu active don't work
 	 |- Padding issues on "equation 2nd degré"
+--- WebApp iOS
+  |- Fix menu padding
+  |- Fix dynamic button padding

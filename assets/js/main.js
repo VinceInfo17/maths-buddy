@@ -69,7 +69,7 @@
 
 					});
 
-					
+
 
 
 
@@ -86,7 +86,7 @@
 			// Header.
 				$('#header')
 					.panel({
-						delay: 500,
+						delay: 300,
 						hideOnClick: true,
 						hideOnSwipe: true,
 						resetScroll: true,
