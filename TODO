@@ -1,8 +1,8 @@
-- Fix Statistiques vertical size when resizing
+- Fix "Variable Aleatoire" dynamic div. Some overflow can happen
 - Fix overflow footer menu
---- Firefox fixes
-  |- Menu - submenu active don't work
-	 |- Padding issues on "equation 2nd degré"
---- WebApp iOS
-  |- Fix menu padding
-  |- Fix dynamic button padding
+- Fix scroll loi poisson & variable aléatoire
+----- Firefox fixes
+  	|- Menu - submenu active don't work
+	|- Padding issues on "equation 2nd degré"
+----- WebApp iOS
+  	|- Fix dynamic button padding

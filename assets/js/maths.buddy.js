@@ -3,11 +3,12 @@
 */
 
 $(document).ready(function() {
-
-    hash_change_div(1);
+    var position_main_window_y = 0;
+    var position_maths_window_y = 0;
+    hash_change_div();
 
     $(window).bind('hashchange', function(e) {
-        hash_change_div(0);
+        hash_change_div();
     });
 
     detect_hash_dynamic_menu();
@@ -71,17 +72,11 @@ $(document).ready(function() {
     }
 
 
-    function hash_change_div(type) {
+    function hash_change_div() {
         var anchor = document.location.hash;
         if (anchor === '#top' || anchor === '#manuel' || anchor === '#menu' || anchor === '#webapp' || anchor === '#about' || anchor === '#contact') {
             //Normal menu
             $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
-            $(".sub-menu-main-window").animate({
-                height: "40px"
-            });
-            $(".sub-menu-maths-window").animate({
-                height: "0px"
-            });
             if ($("#maths_window").css('display') == 'block') {
                 $("#maths_window").css({
                     "display": "none"
@@ -91,52 +86,37 @@ $(document).ready(function() {
                 });
                 $("html, body").animate({
                     scrollTop: $(anchor).offset().top
-                }, 100);
+                }, 70);
             }else{
-              //Type allow us to disable animate on load
-              if(type == 0){
-                  $("html, body").animate({
-                    scrollTop: $(anchor).offset().top
-                }, 150);
-                }
+              $("html, body").animate({
+                scrollTop: $(anchor).offset().top
+              }, 70);
             }
+            $(".sub-menu-main-window").animate({
+                height: "40px"
+            });
+            $(".sub-menu-maths-window").animate({
+                height: "0px"
+            });
         } else if (anchor === '') {
             //Top menu selected
             $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
             $("#top-menu").addClass("active_jquery"); //Add "active" class to selected tab
+            $("#maths_window").css({
+                "display": "none"
+            });
+            $("#main_window").css({
+                "display": "block"
+            });
             $(".sub-menu-main-window").animate({
                 height: "40px"
             });
             $(".sub-menu-maths-window").animate({
                 height: "0px"
             });
-            if ($("#maths_window").css('display') == 'block') {
-                $("#maths_window").css({
-                    "display": "none"
-                });
-                $("#main_window").css({
-                    "display": "block"
-                });
-                $("html, body").animate({
-                    scrollTop: $(anchor).offset().top
-                }, 100);
-            }else{
-              //Type allow us to disable animate on load and scrolling
-              if(type == 0){
-                  $("html, body").animate({
-                    scrollTop: $(anchor).offset().top
-                }, 150);
-                }
-            }
         } else {
             //Maths menu
             $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
-            $(".sub-menu-main-window").animate({
-                height: "0px"
-            });
-            $(".sub-menu-maths-window").animate({
-                height: "40px"
-            });
             if ($("#maths_window").css('display') == 'none') {
                 $("#maths_window").css({
                     "display": "block"
@@ -145,16 +125,19 @@ $(document).ready(function() {
                     "display": "none"
                 });
                 $("html, body").animate({
-                    scrollTop: $(anchor).offset().top
-                }, 100);
+                      scrollTop: $(anchor).offset().top
+                }, 70);
             }else{
-              //Type allow us to disable animate on load
-              if(type == 0){
-                  $("html, body").animate({
-                    scrollTop: $(anchor).offset().top
-                }, 150);
-                }
+              $("html, body").animate({
+                scrollTop: $(anchor).offset().top
+              }, 70);
             }
+            $(".sub-menu-main-window").animate({
+                height: "0px"
+            });
+            $(".sub-menu-maths-window").animate({
+                height: "40px"
+            });
         }
         detect_hash_dynamic_menu();
     }
@@ -190,11 +173,10 @@ $(document).ready(function() {
         //Add div
         $('#add-div-statistiques').append('<div id="add-otf-statistiques_' +
             currentVal +
-            '"><a class="button scrolly button-remove-statistiques" onClick="$(this).Remove_Row(' +
-            currentVal +
-            ', 1);" style="float: right; padding-top: 12.5px; padding-bottom: 12.5px;padding-left:29px;padding-right:29px; font-size:1.5em;">-</a><div style="padding-right: .5em;padding-bottom:2em;position:absolute;width:62%;"><input type="text" name="statistiques_numero_' +
-            currentVal + '" id="statistiques_numero_' + currentVal +
-            '" placeholder="Nombre" style="width:100%"/></div><br/><br/></div>'
+            '" style="padding-bottom:0.5em"><input id="statistiques_numero_' +
+            currentVal +'" name="statistiques_numero_' +
+            currentVal +'" placeholder="Nombre" class="input-text-statistiques" type="text"></input><a class="button button-dynamic button-statistiques" onClick="$(this).Remove_Row(' +
+            currentVal +', 1);">-</a></div>'
         );
         //Copy & reset values on the newly created div
         $("#statistiques_numero_" + currentVal).val($("#statistiques_numero_1").val());
@@ -233,18 +215,16 @@ $(document).ready(function() {
             $("#nombre_vars_v_aleatoire").val(currentVal);
         }
         $('#add-div-v-aleatoire').append('<div id="add-otf-v-aleatoire_' +
-            currentVal +
-            '"><a class="button scrolly button-remove-statistiques" onClick="$(this).Remove_Row(' +
-            currentVal +
-            ', 2);" style="float: right; padding-top: 12.5px; padding-bottom: 12.5px;padding-left:29px;padding-right:29px; font-size:1.5em;">-</a><div style="padding-right: .5em;padding-bottom:2em;position:absolute;width:62%;"><table><tr><td style="border-right: 10px solid transparent;-webkit-background-clip: padding;-moz-background-clip: padding;background-clip: padding-box;"><input id="v_aleatoire_x_' +
-            currentVal +
-            '" name="v_aleatoire_x_' +
-            currentVal +
-            '" placeholder="X" style="width:100%" type="text"></td><td><input id="v_aleatoire_proba_x_' +
-            currentVal +
-            '" name="v_aleatoire_proba_x_' +
-            currentVal +
-            '" placeholder="Probabilité de X" style="width:100%" type="text"></td></tr></table></div><br/><br/></div>'
+            currentVal +'" style="padding-bottom:0.5em"><input id="v_aleatoire_x_' +
+            currentVal + 
+            '" class="input-text-v-aleatoire" name="v_aleatoire_x_' +
+            currentVal + 
+            '" placeholder="X" type="text" style="margin-right:0.08em;"></input><input id="v_aleatoire_proba_x_' +
+            currentVal + 
+            '" class="input-text-v-aleatoire" name="v_aleatoire_proba_x_' +
+            currentVal + 
+            '" placeholder="Probabilité de X" type="text" style="margin-left:0.09em;"></input><a style="margin-left:0.22em;" class="button button-dynamic button-v-aleatoire display-inline-input" onClick="$(this).Remove_Row(' +
+            currentVal + ', 2);">-</a></div>'
         );
         //Copy & reset values on the newly created div
         $("#v_aleatoire_x_" + currentVal).val($("#v_aleatoire_x_1").val());

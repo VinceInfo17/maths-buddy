@@ -7,6 +7,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!--[if lte IE 8]><script src="assets/css/ie/html5shiv.js"></script><![endif]-->
+    <link href="assets/css/reset.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie/v8.css" /><![endif]-->
@@ -125,7 +126,7 @@
         <!-- Main -->
         <div id="main">
             <!-- Manuel -->
-            <section class="one dark cover anchor_tags" id="maths" style="padding-top:2em; padding-bottom:.5em;">
+            <section class="one dark cover" id="maths" style="padding-top:2em; padding-bottom:.5em;">
                 <div class="container" style="vertical-align:middle;">
                     <header>
                         <h2 class="alt">Outils mathématiques</h2>
@@ -133,7 +134,7 @@
                 </div>
             </section>
             <!-- Equation du second degré -->
-            <section class="two anchor_tags" id="second-degre">
+            <section class="two" id="second-degre">
                 <div class="container">
                     <header>
                         <h3>Équation du second degré</h3>
@@ -142,22 +143,12 @@
                     <form action="#" method="post">
                         <div>
                             <div id="table-second-degre">
-                                <table>
-                                    <tr>
-                                        <td style="width:20%;">
-                                            <input name="x2" placeholder="x²" type="text"> </td>
-                                        <td style="width:14%;"> <span class="input-table-text">x²
-                                                +</span> </td>
-                                        <td style="width:20%;">
-                                            <input name="x" placeholder="x" type="text"> </td>
-                                        <td style="width:10%;"> <span class="input-table-text">x
-                                                                +</span> </td>
-                                        <td style="width:20%;">
-                                            <input name="c" placeholder="C" type="text"> </td>
-                                        <td style="width:10%;"> <span class="input-table-text">=
-                                                                                0</span> </td>
-                                    </tr>
-                                </table>
+                                <input class="display-inline-input" style="width:21%;" name="x2" placeholder="x²" type="text">
+                                <span class="input-table-text display-inline-input">x²+</span>
+                                <input class="display-inline-input" style="width:21%;" name="x" placeholder="x" type="text">
+                                <span class="input-table-text display-inline-input">x+</span>
+                                <input class="display-inline-input" style="width:21%;" name="c" placeholder="C" type="text">
+                                <span class="input-table-text display-inline-input">=0</span>    
                             </div>
                             <div class="12u$">
                                 <input type="submit" value="Envoyer !"> </div>
@@ -166,7 +157,7 @@
                 </div>
             </section>
             <!-- Statistiques -->
-            <section class="three anchor_tags" id="statistiques">
+            <section class="three" id="statistiques">
                 <div class="container">
                     <header>
                         <h3>Statistiques</h3>
@@ -174,20 +165,23 @@
                     <p>Calcul de moyenne et d'écart type</p>
                     <form action="#" method="post">
                         <div>
-                            <div style="padding-bottom: 5em;">
-                                <div id="add-div-statistiques"></div> <a class="button button-add-statistiques" style="float: right; padding-top: 12.5px; padding-bottom: 12.5px;padding-left:23.45px;padding-right:23.45px; font-size:1.5em;">+</a>
-                                <div style="padding-right: .5em;padding-bottom:2em;position:absolute;width:62%;">
-                                    <input id="statistiques_numero_1" name="statistiques_numero_1" placeholder="Nombre" style="width:100%" type="text">
+                            <div style="padding-bottom: 2em;">
+                                <div id="add-div-statistiques"></div>
+                                <div>
+                                    <input id="statistiques_numero_1" name="statistiques_numero_1" placeholder="Nombre" class="input-text-statistiques" type="text"></input>
+                                    <a class="button button-dynamic button-statistiques button-add-statistiques">+</a>
                                 </div>
-                                <input id="nombre_vars_statistiques" name="nombre_vars_statistiques" type="hidden" value="1"> </div>
+                                <input id="nombre_vars_statistiques" name="nombre_vars_statistiques" type="hidden" value="1"></input>
+                            </div>
                             <div class="12u$">
-                                <input id="send-button-statistiques" type="submit" value="Envoyer !"> </div>
+                                <input id="send-button-statistiques" type="submit" value="Envoyer !">
+                            </div>
                         </div>
                     </form>
                 </div>
             </section>
             <!-- Loi binomiale -->
-            <section class="four anchor_tags" id="loi-binomiale">
+            <section class="four" id="loi-binomiale">
                 <div class="container">
                     <header>
                         <h3>Loi binomiale</h3>
@@ -216,7 +210,7 @@
                 </div>
             </section>
             <!-- Loi normale -->
-            <section class="three anchor_tags" id="loi-normale">
+            <section class="three" id="loi-normale">
                 <div class="container">
                     <header>
                         <h3>Loi normale</h3>
@@ -251,7 +245,7 @@
                 </div>
             </section>
             <!-- Loi de poisson -->
-            <section class="two anchor_tags" id="loi-poisson">
+            <section class="two" id="loi-poisson">
                 <div class="container">
                     <header>
                         <h3>Loi de Poisson</h3>
@@ -288,7 +282,7 @@
                 </div>
             </section>
             <!-- Variable aléatoire d'une série statistique -->
-            <section class="three anchor_tags" id="variable-aleatoire">
+            <section class="three" id="variable-aleatoire">
                 <div class="container">
                     <header>
                         <h3>Variable aléatoire</h3>
@@ -296,30 +290,25 @@
                     <p>Variable aléatoire d'une série statistique</p>
                     <form action="#" method="post">
                         <div>
-                            <div style="padding-bottom: 5em;">
+                            <div style="padding-bottom: 2em;">
                                 <div id="add-div-v-aleatoire"></div>
-                                <a class="button button-add-v-aleatoire" style="float: right; padding-top: 12.5px; padding-bottom: 12.5px;padding-left:23.45px;padding-right:23.45px; font-size:1.5em;">+</a>
-                                <div style="padding-right: .5em;padding-bottom:2em;position:absolute;width:62%;">
-                                    <table>
-                                        <tr>
-                                            <td style="border-right: 10px solid transparent;-webkit-background-clip: padding;-moz-background-clip: padding;background-clip: padding-box;">
-                                                <input id="v_aleatoire_x_1" name="v_aleatoire_x_1" placeholder="X" style="width:100%" type="text">
-                                            </td>
-                                            <td>
-                                                <input id="v_aleatoire_proba_x_1" name="v_aleatoire_proba_x_1" placeholder="Probabilité de X" style="width:100%" type="text">
-                                            </td>
-                                        </tr>
-                                    </table>
+                                <div>
+                                  <input id="v_aleatoire_x_1" class="input-text-v-aleatoire" name="v_aleatoire_x_1" placeholder="X" type="text"></input>
+                                  <input id="v_aleatoire_proba_x_1" class="input-text-v-aleatoire" name="v_aleatoire_proba_x_1" placeholder="Probabilité de X" type="text"></input>
+                                  <a class="button button-dynamic button-v-aleatoire display-inline-input button-add-v-aleatoire">+</a>
                                 </div>
-                                <input id="nombre_vars_v_aleatoire" name="nombre_vars_v_aleatoire" type="hidden" value="1"> </div>
-                            <div class="12u$">
-                                <input id="send-button-v-aleatoire" type="submit" value="Envoyer !"> </div>
+                                <input id="nombre_vars_v_aleatoire" name="nombre_vars_v_aleatoire" type="hidden" value="1">
+                            </div>
                         </div>
+                        <div class="12u$">
+                            <input id="send-button-v-aleatoire" type="submit" value="Envoyer !">
+                        </div>
+                        
                     </form>
                 </div>
             </section>
             <!-- Test de KHI 2 -->
-            <section class="four anchor_tags" id="test-khi-2">
+            <section class="four" id="test-khi-2">
                 <div class="container">
                     <header>
                         <h3>Test de KHI 2</h3>
@@ -340,7 +329,7 @@
         <!-- Main -->
         <div id="main">
             <!-- Intro -->
-            <section class="one dark cover anchor_tags" id="top">
+            <section class="one dark cover" id="top">
                 <div class="container">
                     <header>
                         <h3 class="alt">Bienvenue sur l'interface de Maths Buddy, un moyen simple et rapide de résoudre vos équations.</h3>
@@ -352,14 +341,14 @@
                 </div>
             </section>
             <!-- Manuel -->
-            <section class="two anchor_tags" id="manuel" style="padding-bottom:1em;">
+            <section class="two" id="manuel" style="padding-bottom:1em;">
                 <div class="container">
                     <header>
                         <h2>Manuel d'utilisation</h2>
                     </header>
                 </div>
             </section>
-            <section class="three anchor_tags" id="menu">
+            <section class="three" id="menu">
                 <div class="container">
                     <header>
                         <h3>Menu</h3>
@@ -392,7 +381,7 @@
                     </div>
                 </div>
             </section>
-            <section class="four anchor_tags" id="webapp">
+            <section class="four" id="webapp">
                 <div class="container">
                     <header>
                         <h3>WebApp (iOS)</h3>
@@ -427,7 +416,7 @@
                 </div>
             </section>
             <!-- About Me -->
-            <section class="three anchor_tags" id="about">
+            <section class="three" id="about">
                 <div class="container">
                     <header>
                         <h2>À propos</h2>
@@ -457,7 +446,7 @@
                 </div>
             </section>
             <!-- Contact -->
-            <section class="two anchor_tags" id="contact">
+            <section class="two" id="contact">
                 <div class="container">
                     <header>
                         <h2>Contact</h2>
