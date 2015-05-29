@@ -1,8 +1,4 @@
-- Fix "Variable Aleatoire" dynamic div. Some overflow can happen
+- Dynamic div padding on Variable aléatoire is buggy
 - Fix overflow footer menu
-- Fix scroll loi poisson & variable aléatoire
------ Firefox fixes
-  	|- Menu - submenu active don't work
-	|- Padding issues on "equation 2nd degré"
 ----- WebApp iOS
   	|- Fix dynamic button padding

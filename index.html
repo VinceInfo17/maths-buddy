@@ -103,6 +103,12 @@
                         <a class="sub-menu-maths-window skel-layers-ignoreHref" href="#test-khi-2" id="test-khi-2-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Test de KHI 2</span></a>
                     </li>
                     <li>
+                        <a class="sub-menu-maths-window skel-layers-ignoreHref" href="#loi-uniforme" id="loi-uniforme-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Loi uniforme</span></a>
+                    </li>
+                    <li>
+                        <a class="sub-menu-maths-window skel-layers-ignoreHref" href="#troisieme-degre" id="troisieme-degre-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Équation troisième degré</span></a>
+                    </li>
+                    <li>
                         <a class="skel-layers-ignoreHref" href="#about" id="about-menu"><span class="icon fa-user">À propos</span></a>
                     </li>
                     <li>
@@ -142,7 +148,7 @@
                     <p>Calcul d'une équation du second degré</p>
                     <form action="#" method="post">
                         <div>
-                            <div id="table-second-degre">
+                            <div class="row-equation">
                                 <input class="display-inline-input" style="width:21%;" name="x2" placeholder="x²" type="text">
                                 <span class="input-table-text display-inline-input">x²+</span>
                                 <input class="display-inline-input" style="width:21%;" name="x" placeholder="x" type="text">
@@ -151,7 +157,7 @@
                                 <span class="input-table-text display-inline-input">=0</span>    
                             </div>
                             <div class="12u$">
-                                <input type="submit" value="Envoyer !"> </div>
+                                <input type="submit" name="send-button-second-degre" value="Envoyer !"> </div>
                         </div>
                     </form>
                 </div>
@@ -204,7 +210,7 @@
                                 </table>
                             </div>
                             <div class="12u$">
-                                <input type="submit" value="Envoyer !"> </div>
+                                <input type="submit" name="send-button-loi-binomiale" value="Envoyer !"> </div>
                         </div>
                     </form>
                 </div>
@@ -222,9 +228,11 @@
                                 <table>
                                     <tr>
                                         <td style="border-right: 10px solid transparent;-webkit-background-clip: padding;-moz-background-clip: padding;background-clip: padding-box;">
-                                            <input name="esperance" placeholder="Espérance" style="width:100%" type="text"> </td>
+                                            <input name="esperance" placeholder="Espérance" style="width:100%" type="text"></input>
+                                          </td>
                                         <td>
-                                            <input name="ecart-type" placeholder="Écart-type" style="width:100%" type="text"> </td>
+                                            <input name="ecart-type" placeholder="Écart-type" style="width:100%" type="text"></input>
+                                        </td>
                                     </tr>
                                 </table>
                                 <div class="type-saisie-radio" id="type-saisie-loi-normale">
@@ -237,9 +245,30 @@
                                     <input id="radio-type-saisie-loi-normale-4" name="radio-saisie-loi-normale" type="radio" value="3">
                                     <label for="radio-type-saisie-loi-normale-4">&gt;</label>
                                 </div>
+                                <div id="inferior-egale-loi-normale" style="display:block;margin-bottom: 2em;">
+                                  <input name="inferior-egale-input" placeholder="<=" style="width:100%" type="text"></input>
+                                </div>
+                                <div id="superior-egale-loi-normale" style="display:none;margin-bottom: 2em;">
+                                  <input name="superior-egale-input" placeholder=">=" style="width:100%" type="text"></input>
+                                </div>
+                                <div id="min-max-loi-normale" style="display:none;">
+                                  <table>
+                                      <tr>
+                                          <td style="border-right: 10px solid transparent;-webkit-background-clip: padding;-moz-background-clip: padding;background-clip: padding-box;">
+                                              <input name="min-input" placeholder="Min" style="width:100%" type="text"></input>
+                                            </td>
+                                          <td>
+                                              <input name="max-type" placeholder="Max" style="width:100%" type="text"></input>
+                                          </td>
+                                      </tr>
+                                  </table>
+                                </div>
+                                <div id="superior-loi-normale" style="display:none;margin-bottom: 2em;">
+                                  <input name="superior-input" placeholder=">" style="width:100%" type="text"></input>
+                                </div>
                             </div>
                             <div class="12u$">
-                                <input type="submit" value="Envoyer !"> </div>
+                                <input type="submit" name="send-button-loi-normale" value="Envoyer !"> </div>
                         </div>
                     </form>
                 </div>
@@ -270,14 +299,15 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <input name="n" placeholder="N" type="text"> </td>
+                                                <input name="n" placeholder="N" type="text">
+                                            </td>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
                         </div>
                         <div class="12u$">
-                            <input type="submit" value="Envoyer !"> </div>
+                            <input type="submit" name="send-button-loi-poisson" value="Envoyer !"> </div>
                     </form>
                 </div>
             </section>
@@ -318,6 +348,59 @@
                         <div>
                             <div class="12u$">
                                 <input id="send-button-khi-2" type="submit" value="Envoyer !">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- Loi uniforme -->
+            <section class="three" id="loi-uniforme">
+                <div class="container">
+                    <header>
+                        <h3>Loi uniforme</h3>
+                    </header>
+                    <p>Loi uniforme</p>
+                    <form action="#" method="post">
+                        <div>
+                            <div id="row-loi-uniforme">
+                                <span class="input-table-text display-inline-input">[</span>
+                                <input class="display-inline-input" style="width:25%;" name="x1" placeholder="x1" type="text">
+                                <span class="input-table-text display-inline-input">;</span>
+                                <input class="display-inline-input" style="width:25%;" name="x2" placeholder="x2" type="text">
+                                <span class="input-table-text display-inline-input">]</span>
+                            </div>
+                            <div id="loi-uniforme-n">
+                                 <input name="n" placeholder="N" type="text">
+                            </div>
+
+                            <div class="12u$">
+                                <input id="send-button-loi-uniforme" type="submit" value="Envoyer !">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- Equation du troisieme degré -->
+            <section class="three" id="troisieme-degre">
+                <div class="container">
+                    <header>
+                        <h3>Équation du troisième degré</h3>
+                    </header>
+                    <p>Équation du troisième degré</p>
+                    <form action="#" method="post">
+                        <div>
+                            <div class="row-equation">
+                                <input class="display-inline-input" style="width:21%;" name="x3" placeholder="x3" type="text">
+                                <span class="input-table-text display-inline-input">x3+</span>
+                                <input class="display-inline-input" style="width:21%;" name="x2" placeholder="x²" type="text">
+                                <span class="input-table-text display-inline-input">x²+</span>
+                                <input class="display-inline-input" style="width:21%;" name="x" placeholder="x" type="text">
+                                <span class="input-table-text display-inline-input">x+</span>
+                                <input class="display-inline-input" style="width:21%;" name="c" placeholder="C" type="text">
+                                <span class="input-table-text display-inline-input">=0</span>  
+                            </div>
+                            <div class="12u$">
+                                <input id="send-button-loi-uniforme" type="submit" value="Envoyer !">
                             </div>
                         </div>
                     </form>

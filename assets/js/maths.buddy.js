@@ -3,8 +3,6 @@
 */
 
 $(document).ready(function() {
-    var position_main_window_y = 0;
-    var position_maths_window_y = 0;
     hash_change_div();
 
     $(window).bind('hashchange', function(e) {
@@ -20,30 +18,39 @@ $(document).ready(function() {
 
     function detect_hash_dynamic_menu() {
         if ($("#maths_window").css('display') == 'block') {
-            if ($('#maths').visible(true)) {
+            if ($('#maths').visible()) {
                 $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
                 $("#maths-menu").addClass("active_jquery"); //Add "active" class to selected tab
-            } else if ($('#second-degre').visible(true)) {
+            } else if ($('#second-degre').visible()) {
                 $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
                 $("#second-degre-menu").addClass("active_jquery"); //Add "active" class to selected tab
-            } else if ($('#statistiques').visible(true)) {
+            } else if ($('#statistiques').visible()) {
                 $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
                 $("#statistiques-menu").addClass("active_jquery"); //Add "active" class to selected tab
-            } else if ($('#loi-binomiale').visible(true)) {
+            } else if ($('#loi-binomiale').visible()) {
                 $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
                 $("#loi-binomiale-menu").addClass("active_jquery"); //Add "active" class to selected tab
-            } else if ($('#loi-normale').visible(true)) {
+            } else if ($('#loi-normale').visible()) {
                 $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
                 $("#loi-normale-menu").addClass("active_jquery"); //Add "active" class to selected tab
-            } else if ($('#loi-poisson').visible(true)) {
+            } else if ($('#loi-poisson').visible()) {
                 $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
                 $("#loi-poisson-menu").addClass("active_jquery"); //Add "active" class to selected tab
             } else if ($('#variable-aleatoire').visible()) {
                 $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
                 $("#variable-aleatoire-menu").addClass("active_jquery"); //Add "active" class to selected tab
-            } else if ($('#test-khi-2').visible(true)) {
+            } else if ($('#test-khi-2').visible()) {
                 $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
                 $("#test-khi-2-menu").addClass("active_jquery"); //Add "active" class to selected tab
+            } else if ($('#loi-uniforme').visible()) {
+                $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+                $("#loi-uniforme-menu").addClass("active_jquery"); //Add "active" class to selected tab
+            } else if ($('#troisieme-degre').visible()) {
+                $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+                $("#troisieme-degre-menu").addClass("active_jquery"); //Add "active" class to selected tab
+            }else if ($('#footer').visible(true)) {
+                $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
+                $("#troisieme-degre-menu").addClass("active_jquery"); //Add "active" class to selected tab
             }
         } else {
             if ($('#top').visible(true)) {
@@ -146,6 +153,7 @@ $(document).ready(function() {
     $("#type-saisie-loi-poisson").buttonset();
     $("#type-saisie-loi-normale").buttonset();
     //Dynamic radio button
+    //Loi poisson
     $('#radio-type-loi-poisson-1').click(function() {
         $("#lambda_poisson").css({
             "display": "none"
@@ -160,6 +168,63 @@ $(document).ready(function() {
         });
         $("#p_poisson").css({
             "display": "none"
+        });
+    });
+    //Loi normale
+    $('#radio-type-saisie-loi-normale-1').click(function() {
+        $("#inferior-egale-loi-normale").css({
+            "display": "block"
+        });
+        $("#superior-egale-loi-normale").css({
+            "display": "none"
+        });
+        $("#min-max-loi-normale").css({
+            "display": "none"
+        });
+        $("#superior-loi-normale").css({
+            "display": "none"
+        });
+    });
+    $('#radio-type-saisie-loi-normale-2').click(function() {
+        $("#inferior-egale-loi-normale").css({
+            "display": "none"
+        });
+        $("#superior-egale-loi-normale").css({
+            "display": "block"
+        });
+        $("#min-max-loi-normale").css({
+            "display": "none"
+        });
+        $("#superior-loi-normale").css({
+            "display": "none"
+        });
+    });    
+    $('#radio-type-saisie-loi-normale-3').click(function() {
+        $("#inferior-egale-loi-normale").css({
+            "display": "none"
+        });
+        $("#superior-egale-loi-normale").css({
+            "display": "none"
+        });
+        $("#min-max-loi-normale").css({
+            "display": "block"
+        });
+        $("#superior-loi-normale").css({
+            "display": "none"
+        });
+    });
+    $('#radio-type-saisie-loi-normale-4').click(function() {
+        $("#inferior-egale-loi-normale").css({
+            "display": "none"
+        });
+        $("#superior-egale-loi-normale").css({
+            "display": "none"
+        });
+        $("#min-max-loi-normale").css({
+            "display": "none"
+        });
+        $("#superior-loi-normale").css({
+            "display": "block"
         });
     });
 
@@ -219,11 +284,11 @@ $(document).ready(function() {
             currentVal + 
             '" class="input-text-v-aleatoire" name="v_aleatoire_x_' +
             currentVal + 
-            '" placeholder="X" type="text" style="margin-right:0.08em;"></input><input id="v_aleatoire_proba_x_' +
+            '" placeholder="X" type="text"></input><input id="v_aleatoire_proba_x_' +
             currentVal + 
             '" class="input-text-v-aleatoire" name="v_aleatoire_proba_x_' +
             currentVal + 
-            '" placeholder="Probabilité de X" type="text" style="margin-left:0.09em;"></input><a style="margin-left:0.22em;" class="button button-dynamic button-v-aleatoire display-inline-input" onClick="$(this).Remove_Row(' +
+            '" placeholder="Probabilité de X" type="text"></input><a class="button button-dynamic button-v-aleatoire display-inline-input" onClick="$(this).Remove_Row(' +
             currentVal + ', 2);">-</a></div>'
         );
         //Copy & reset values on the newly created div

@@ -1981,6 +1981,7 @@
 		width: 375px;
 		height: 100%;
 		color: #fff;
+    overflow-y: auto;
 		background: #222629 url("images/overlay.png");
 		box-shadow: inset -0.25em 0 0.25em 0 rgba(0, 0, 0, 0.1);
 		text-align: right;
@@ -1993,7 +1994,7 @@
 			width: 100%;
 		}
 
-		#header .bottom {
+		#header .bottom{
 			position: absolute;
 			left: 0;
 			bottom: 0;
@@ -2020,7 +2021,7 @@
 
 	#logo {
 		position: relative;
-		margin: 1.75em 1.5em 1.5em 1.5em;
+		margin: 1.1em 1.5em 1.1em 1.5em;
 		min-height: 48px;
 		cursor: default;
 	}
@@ -2050,7 +2051,7 @@
 
 	#nav ul li a {
 		display: block;
-		padding: 0.5em 1.5em 0.5em 1.5em;
+		padding: 0.3em 1.5em 0.3em 1.5em;
 		color: rgba(255, 255, 255, 0.5);
 		text-decoration: none;
 		outline: 0;
@@ -2375,7 +2376,7 @@
 			}
 
 			#nav ul li a {
-				padding: 0.5em 1.25em 0.5em 1.25em;
+				padding: 0.3em 1.25em 0.3em 1.25em;
 			}
 
 			#headerToggle {
@@ -2536,18 +2537,12 @@
 					margin-top: 0;
 				}
 
-        #table-second-degre {
-          width:100%;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
         .type-saisie-radio {
           font-size:0.9em !important;
         }
 
         .sub-menu-icon {
-          margin-left: 2.4em !important;
+          margin-left: 1.7em !important;
           font-size:0.8em !important;
           top:10% !important;
         }
@@ -2577,12 +2572,26 @@
 	position: relative;
 }
 
-#table-second-degre {
+.row-equation {
 	width:100%;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 2em;
 }
+
+#row-loi-uniforme {
+  width:100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 0.5em;
+}
+#loi-uniforme-n {
+  width:52%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2em;
+}
+
 
 .type-saisie-radio {
 	font-size:1.3em;
@@ -2612,7 +2621,7 @@
 
 @media screen and (min-width: 737px) {
   .sub-menu-icon {
-    margin-left: 2.4em !important;
+    margin-left: 1.7em !important;
     font-size:0.7em !important;
     top:7% !important;
   }
