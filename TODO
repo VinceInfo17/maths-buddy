@@ -1,4 +1,1 @@
-- Dynamic div padding on Variable aléatoire is buggy
-- Fix overflow footer menu
------ WebApp iOS
-  	|- Fix dynamic button padding
+- Padding dynamic button, iPhone fixed but not proper, iPad issue

@@ -48,7 +48,7 @@ $(document).ready(function() {
             } else if ($('#troisieme-degre').visible()) {
                 $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
                 $("#troisieme-degre-menu").addClass("active_jquery"); //Add "active" class to selected tab
-            }else if ($('#footer').visible(true)) {
+            } else if ($('#footer').visible(true)) {
                 $("#nav li a.active_jquery").removeClass("active_jquery"); //Remove any "active" class
                 $("#troisieme-degre-menu").addClass("active_jquery"); //Add "active" class to selected tab
             }
@@ -94,10 +94,10 @@ $(document).ready(function() {
                 $("html, body").animate({
                     scrollTop: $(anchor).offset().top
                 }, 70);
-            }else{
-              $("html, body").animate({
-                scrollTop: $(anchor).offset().top
-              }, 70);
+            } else {
+                $("html, body").animate({
+                    scrollTop: $(anchor).offset().top
+                }, 70);
             }
             $(".sub-menu-main-window").animate({
                 height: "40px"
@@ -132,12 +132,12 @@ $(document).ready(function() {
                     "display": "none"
                 });
                 $("html, body").animate({
-                      scrollTop: $(anchor).offset().top
+                    scrollTop: $(anchor).offset().top
                 }, 70);
-            }else{
-              $("html, body").animate({
-                scrollTop: $(anchor).offset().top
-              }, 70);
+            } else {
+                $("html, body").animate({
+                    scrollTop: $(anchor).offset().top
+                }, 70);
             }
             $(".sub-menu-main-window").animate({
                 height: "0px"
@@ -198,7 +198,7 @@ $(document).ready(function() {
         $("#superior-loi-normale").css({
             "display": "none"
         });
-    });    
+    });
     $('#radio-type-saisie-loi-normale-3').click(function() {
         $("#inferior-egale-loi-normale").css({
             "display": "none"
@@ -239,9 +239,9 @@ $(document).ready(function() {
         $('#add-div-statistiques').append('<div id="add-otf-statistiques_' +
             currentVal +
             '" style="padding-bottom:0.5em"><input id="statistiques_numero_' +
-            currentVal +'" name="statistiques_numero_' +
-            currentVal +'" placeholder="Nombre" class="input-text-statistiques" type="text"></input><a class="button button-dynamic button-statistiques" onClick="$(this).Remove_Row(' +
-            currentVal +', 1);">-</a></div>'
+            currentVal + '" name="statistiques_numero_' +
+            currentVal + '" placeholder="Nombre" class="dynamic-element" style="display: inline;" type="text"></input><a class="button button-dynamic" style="float: right;" onClick="$(this).Remove_Row(' +
+            currentVal + ', 1);">-</a></div>'
         );
         //Copy & reset values on the newly created div
         $("#statistiques_numero_" + currentVal).val($("#statistiques_numero_1").val());
@@ -280,15 +280,11 @@ $(document).ready(function() {
             $("#nombre_vars_v_aleatoire").val(currentVal);
         }
         $('#add-div-v-aleatoire').append('<div id="add-otf-v-aleatoire_' +
-            currentVal +'" style="padding-bottom:0.5em"><input id="v_aleatoire_x_' +
-            currentVal + 
-            '" class="input-text-v-aleatoire" name="v_aleatoire_x_' +
-            currentVal + 
-            '" placeholder="X" type="text"></input><input id="v_aleatoire_proba_x_' +
-            currentVal + 
-            '" class="input-text-v-aleatoire" name="v_aleatoire_proba_x_' +
-            currentVal + 
-            '" placeholder="Probabilité de X" type="text"></input><a class="button button-dynamic button-v-aleatoire display-inline-input" onClick="$(this).Remove_Row(' +
+            currentVal + '"><table class="dynamic-element" style="float: left; margin-bottom:10px;"><tr><td style="border-right: 10px solid transparent;-webkit-background-clip: padding;-moz-background-clip: padding;background-clip: padding-box;"><input id="v_aleatoire_x_' +
+            currentVal + '" class="input-text-v-aleatoire" name="v_aleatoire_x_' +
+            currentVal + '" placeholder="X" type="text"></input></td><td><input id="v_aleatoire_proba_x_' +
+            currentVal + '" class="input-text-v-aleatoire" name="v_aleatoire_proba_x_' +
+            currentVal + '" placeholder="Probabilité de X" type="text"></input></td></tr></table><a class="button button-dynamic" style="float: right;" onClick="$(this).Remove_Row(' +
             currentVal + ', 2);">-</a></div>'
         );
         //Copy & reset values on the newly created div
