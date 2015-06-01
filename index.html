@@ -11,6 +11,7 @@
     <link href="assets/css/reset.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="assets/css/jquery-ui.theme.min.css" rel="stylesheet">
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie/v8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie/v9.css" /><![endif]-->
     <!--[if lte IE 8]><script src="assets/css/ie/respond.min.js"></script><![endif]-->
@@ -91,19 +92,19 @@
                         <a class="skel-layers-ignoreHref" href="#manuel" id="manuel-menu"><span class="icon fa-book">Manuel</span></a>
                     </li>
                     <li>
-                        <a class="sub-menu sub-menu-main-window skel-layers-ignoreHref" href="#menu" id="menu-menu"><span class="icon fa-align-justify sub-menu-icon"></span><span class="sub-menu-text">Menu</span></a>
+                        <a class="sub-menu sub-menu-main-window skel-layers-ignoreHref" href="#menu" id="menu-menu"><span class="icon fa-list sub-menu-icon"></span><span class="sub-menu-text">Menu</span></a>
                     </li>
                     <li>
                         <a class="sub-menu sub-menu-main-window skel-layers-ignoreHref" href="#webapp" id="webapp-menu"><span class="icon fa-mobile-phone sub-menu-icon"></span><span class="sub-menu-text">WebApp (iOS)</span></a>
                     </li>
                     <li>
-                        <a class="skel-layers-ignoreHref" href="#maths" id="maths-menu"><span class="icon fa-calculator">Outils mathématiques</span></a>
+                        <a class="skel-layers-ignoreHref" href="#maths" id="maths-menu"><span class="icon fa-cog">Outils mathématiques</span></a>
                     </li>
                     <li>
-                        <a class="sub-menu sub-menu-maths-window skel-layers-ignoreHref" href="#second-degre" id="second-degre-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Équation second degré</span></a>
+                        <a class="sub-menu sub-menu-maths-window skel-layers-ignoreHref" href="#second-degre" id="second-degre-menu"><span class="icon fa-area-chart sub-menu-icon"></span><span class="sub-menu-text">Équation second degré</span></a>
                     </li>
                     <li>
-                        <a class="sub-menu sub-menu-maths-window skel-layers-ignoreHref" href="#statistiques" id="statistiques-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Statistiques</span></a>
+                        <a class="sub-menu sub-menu-maths-window skel-layers-ignoreHref" href="#statistiques" id="statistiques-menu"><span class="icon fa-bar-chart sub-menu-icon"></span><span class="sub-menu-text">Statistiques</span></a>
                     </li>
                     <li>
                         <a class="sub-menu sub-menu-maths-window skel-layers-ignoreHref" href="#loi-binomiale" id="loi-binomiale-menu"><span class="icon fa-calculator sub-menu-icon"></span><span class="sub-menu-text">Loi binomiale</span></a>
@@ -154,20 +155,38 @@
                         <h3>Équation du second degré</h3>
                     </header>
                     <p>Calcul d'une équation du second degré</p>
-                    <form action="#" method="post">
+                    <form method="post" id="form-second-degre">
                         <div>
                             <div class="row-equation">
-                                <input class="display-inline-input" style="width:21%;" name="x2" placeholder="x²" type="text">
+                                <input class="display-inline-input" style="width:21%;" name="a" placeholder="x²" type="text">
                                 <span class="input-table-text display-inline-input">x²+</span>
-                                <input class="display-inline-input" style="width:21%;" name="x" placeholder="x" type="text">
+                                <input class="display-inline-input" style="width:21%;" name="b" placeholder="x" type="text">
                                 <span class="input-table-text display-inline-input">x+</span>
                                 <input class="display-inline-input" style="width:21%;" name="c" placeholder="C" type="text">
                                 <span class="input-table-text display-inline-input">=0</span>
                             </div>
-                            <div class="12u$">
+                            <a class="button button-parameter icon fa-cog parameter-second-degre"></a>
+                            <div class="parameters-div">
+                                <table id="table-parameters-second-degre">
+                                        <tr>
+                                            <td class="padding-left-td">
+                                                <input id="min-second-degre" name="min" placeholder="Min" style="width:100%" type="text"></input>
+                                            </td>
+                                            <td class="padding-left-td">
+                                                <input id="max-second-degre" name="max" placeholder="Max" style="width:100%" type="text"></input>
+                                            </td>
+                                            <td>
+                                                <input id="step-second-degre" name="step" placeholder="Étape" style="width:100%" type="text"></input>
+                                            </td>
+                                        </tr>
+                                </table>
+                            </div>
+                            <div class="12u$" style="padding-top:1em;padding-bottom: 1em;">
                                 <input type="submit" name="send-button-second-degre" value="Envoyer !"> </div>
                         </div>
                     </form>
+                    <div id="result-second-degre" class="result-div"></div>
+                    <div id="bottom-result-second-degre"></div>
                 </div>
             </section>
             <!-- Statistiques -->
@@ -235,7 +254,7 @@
                             <div>
                                 <table>
                                     <tr>
-                                        <td style="border-right: 10px solid transparent;-webkit-background-clip: padding;-moz-background-clip: padding;background-clip: padding-box;">
+                                        <td class="padding-left-td">
                                             <input name="esperance" placeholder="Espérance" style="width:100%" type="text"></input>
                                         </td>
                                         <td>
@@ -262,7 +281,7 @@
                                 <div id="min-max-loi-normale" style="display:none;">
                                     <table>
                                         <tr>
-                                            <td style="border-right: 10px solid transparent;-webkit-background-clip: padding;-moz-background-clip: padding;background-clip: padding-box;">
+                                            <td class="padding-left-td">
                                                 <input name="min-input" placeholder="Min" style="width:100%" type="text"></input>
                                             </td>
                                             <td>
@@ -276,7 +295,8 @@
                                 </div>
                             </div>
                             <div class="12u$">
-                                <input type="submit" name="send-button-loi-normale" value="Envoyer !"> </div>
+                                <input type="submit" name="send-button-loi-normale" value="Envoyer !">
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -333,7 +353,7 @@
                                 <div>
                                     <table class="dynamic-element" style="float: left;">
                                         <tr>
-                                            <td style="border-right: 10px solid transparent;-webkit-background-clip: padding;-moz-background-clip: padding;background-clip: padding-box;">
+                                            <td class="padding-left-td">
                                                 <input id="v_aleatoire_x_1" class="input-text-v-aleatoire" name="v_aleatoire_x_1" placeholder="X" type="text"></input>
                                             </td>
                                             <td>
@@ -573,6 +593,10 @@
             <li>Pierre L. & Vincent T. All rights reserved.</li>
         </ul>
     </div>
+    <!-- Error AJAX dialog -->
+    <div id="dialog-error-ajax" title="Erreur chargement">
+      Impossible de charger l'API.<br/>Veuillez vérifier votre connexion internet.
+    </div>
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -582,6 +606,7 @@
     <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/js/jquery.visible.min.js"></script>
     <script src="assets/js/maths.buddy.js"></script>
+    <script src="assets/js/chart.js"></script>
 </body>
 
 </html>

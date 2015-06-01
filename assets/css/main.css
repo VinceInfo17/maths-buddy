@@ -2442,6 +2442,9 @@ button:active,
     .button-dynamic {
         margin-top: 2px;
     }
+    #table-parameters-second-degre {
+     width: 100% !important;
+    }
 }
 /* My modification */
 
@@ -2465,7 +2468,6 @@ tr.spaceUnder > td {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 2em;
 }
 
 #row-loi-uniforme {
@@ -2544,4 +2546,83 @@ tr.spaceUnder > td {
 
 .bottom-icon a {
     font-size: 1.3em;
+}
+
+
+.padding-left-td {
+   border-right: 10px solid transparent;
+   -webkit-background-clip: padding;
+   -moz-background-clip: padding;
+   background-clip: padding-box;
+}
+
+.parameters-div {
+  width: 100%;
+  height:0px;
+  overflow: hidden;
+  margin-top: 0em;
+  padding-top: 2px;
+}
+
+.button-parameter {
+    line-height: 1em;
+    font-family: monospace;
+    padding-left: 25px;
+    padding-right: 25px;
+    vertical-align: middle;
+    margin-top: 1em;
+}
+
+.ui-widget.success-dialog {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: .8em;
+}
+
+.ui-widget-content.success-dialog {
+    background: #F9F9F9;
+    border: 0px solid #BF0000;
+    color: #222222;
+}
+
+.ui-dialog.success-dialog {
+    left: 0;
+    outline: 0 none;
+    padding: 0 !important;
+    position: absolute;
+    top: 0;
+}
+
+.ui-dialog.success-dialog .ui-dialog-content {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    overflow: auto;
+    position: relative;
+    padding: 1em !important;
+    margin: 0;
+    text-align: center;
+}
+
+.ui-dialog.success-dialog .ui-widget-header {
+    background: #a90329; /* Old browsers */
+    background: -moz-linear-gradient(top,  #a90329 0%, #8f0222 44%, #6d0019 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+    border: 0;
+    color: #fff;
+    font-weight: normal;
+}
+
+.ui-dialog.success-dialog .ui-dialog-titlebar {
+    padding: 0.1em .5em;
+    position: relative;
+    font-size: 1em;
+}
+
+#table-parameters-second-degre {
+  width: 60%;
+  margin: 0 auto;
 }
