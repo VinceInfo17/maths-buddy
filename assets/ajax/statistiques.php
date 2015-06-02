@@ -35,7 +35,7 @@ if(isset($_POST["statistiques_nom_"]) && isset($_POST["statistiques_numero_"])){
 					for ($j=$i+1; $j < count($_POST["statistiques_numero_"]); $j++) { 
 						//If there is an inferior value, we exchange it
 						if($_POST["statistiques_numero_"][$j] < $_POST["statistiques_numero_"][$i]){
-							list($_POST["statistiques_numero_"][$j], $_POST["statistiques_numero_"][$i]) = array ($_POST["statistiques_numero_"][$i], $_POST["statistiques_numero_"][$j]);
+							list($_POST["statistiques_numero_"][$j], $_POST["statistiques_numero_"][$i], $_POST["statistiques_nom_"][$j], $_POST["statistiques_nom_"][$i]) = array ($_POST["statistiques_numero_"][$i], $_POST["statistiques_numero_"][$j], $_POST["statistiques_nom_"][$i], $_POST["statistiques_nom_"][$j]);
 						}
 					}
 				}
@@ -59,7 +59,7 @@ if(isset($_POST["statistiques_nom_"]) && isset($_POST["statistiques_numero_"])){
 							}
 						}else{
 							$array_modified[$count_1] = $count_2;
-							$tab_mod_valeur[$count_1++] = $_POST["statistiques_numero_"][$i];
+							$array_modified_values[$count_1++] = $_POST["statistiques_numero_"][$i];
 							$i = $j;
 							$count_1 = 1;
 						}
@@ -73,20 +73,26 @@ if(isset($_POST["statistiques_nom_"]) && isset($_POST["statistiques_numero_"])){
 				//Écart-type
 				$ecart_type = sqrt($variance);
 				//Mode & Max Value
-				$max_value = $tab_mod_valeur[0];
+				$max_value = $_POST["statistiques_numero_"][0];
 				for ($i=0; $i < $count_1; $i++) { 
-					if ($tab_mod_valeur[$i] > $max_value){
+					if ($array_modified[$i] > $max_value){
 						$place = $i;
-						$max_value = $tab_mod_valeur[$i];
+						$max_value = $array_modified[$i];
 					}
 				}
-				$mode = $tab_mod_valeur[$place];
+				$mode = $_POST["statistiques_numero_"][$place];
 				$max_value = max($_POST["statistiques_numero_"]);
 				$min_value = min($_POST["statistiques_numero_"]);
 				if($api){
 					$result_api = json_encode(array("error" => "no", "somme" => (string)$somme_numero, "moyenne" => (string)round($moyenne, ROUND_VALUE), "mediane" => (string)round($mediane, ROUND_VALUE), "numerateur" => (string)round($numerateur,ROUND_VALUE), "variance" => (string)round($variance, ROUND_VALUE), "ecart-type" => (string)round($ecart_type, ROUND_VALUE), "mode" => (string)$mode, "min" => (string)$min_value, "max" => (string)$max_value));
 				}else{
 					$html = "Somme : " . $somme_numero . "<br/>Moyenne : " . round($moyenne,ROUND_VALUE) . "<br/>Médiane : " . round($mediane,ROUND_VALUE) . "<br/>Numérateur : " . round($numerateur,ROUND_VALUE) . "<br/>Variance : " . round($variance,ROUND_VALUE) . "<br/>Écart-type : " . round($ecart_type,ROUND_VALUE) . "<br/>Mode : " . $mode . "<br/>Minimum : " . $min_value . " || Maximum : " . $max_value;
+					//Fix for graph when there is a negative value. Chart.JS is bugged on this one. Wait for next release
+					if($min_value<0){
+						$negative_graph = true;
+					}else{
+						$negative_graph = false;
+					}
 				}
 				//Create graph data
 				$data_charts = create_graph_statistiques($_POST["statistiques_nom_"],$_POST["statistiques_numero_"]);
@@ -107,6 +113,6 @@ if(isset($_POST["statistiques_nom_"]) && isset($_POST["statistiques_numero_"])){
 
 //If the graph data is present, we show the graph
 if(isset($data_charts) && !$api){
-	echo show_graph_line($data_charts, "bar", "graph_statistiques");
+	echo show_graph_line($data_charts, "bar", "graph_statistiques", $negative_graph);
 }
 ?>

@@ -53,7 +53,7 @@ function create_graph_statistiques($labels, $data){
     return $result;
 }
 
-function show_graph_line($data_charts, $type, $name){
+function show_graph_line($data_charts, $type, $name, $negative){
 	$html = '<br/><div style="width:100%"><canvas id="'. $name .'"></canvas></div>
 	<script>
 		var data_'.$name.' = {
@@ -61,8 +61,13 @@ function show_graph_line($data_charts, $type, $name){
 		}
 		var options_'.$name.' = {
 		    responsive: true,
-		    scaleBeginAtZero: false
-		}
+		    scaleBeginAtZero: ';
+	if($negative){
+		$html .= "false";
+	}else{
+		$html .= "true";
+	}
+	$html .= '}
 		// Get the context of the canvas element we want to select
 		var ctx = document.getElementById("'.$name.'").getContext("2d");';
 	switch ($type) {

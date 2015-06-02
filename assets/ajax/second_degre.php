@@ -35,7 +35,7 @@ if(isset($_POST["a"]) && isset($_POST["b"]) && isset($_POST["c"]) && isset($_POS
 			$a = $_POST["a"];
 			$b = $_POST["b"];
 			$c = $_POST["c"];
-			if($a == 0 && $b != 0 && $c != 0){
+			if($a == 0){
 				api_check($api, json_encode(array("error" => "a_should_not_equal_zero")), "<span style=\"color:#a90329\">A ne doit pas être égal à 0</span>");
 			}else{
 				if($a == 0 && $b == 0 && $c != 0){
@@ -101,7 +101,7 @@ if(isset($_POST["a"]) && isset($_POST["b"]) && isset($_POST["c"]) && isset($_POS
 				}
 			}
 		}else{
-			api_check($api, json_encode(array("error" => "min_superior_max")),"<span style=\"color:#a90329\">Le minimum ne doit pas être supérieur au maximum</span>");
+			api_check($api, json_encode(array("error" => "min_superior_max")),"<span style=\"color:#a90329\">L'intervalle minimum ne doit pas être supérieur au maximum</span>");
 		}
 	}else{
 		api_check($api, json_encode(array("error" => "bad_type_parameters")),"<span style=\"color:#a90329\">Les paramètres entrés sont incorrects</span>");
@@ -112,6 +112,6 @@ if(isset($_POST["a"]) && isset($_POST["b"]) && isset($_POST["c"]) && isset($_POS
 
 //If the graph data is present, we show the graph
 if(isset($data_charts) && !$api){
-	echo show_graph_line($data_charts, "line", "graph_second_degre");
+	echo show_graph_line($data_charts, "line", "graph_second_degre",true);
 }
 ?>
