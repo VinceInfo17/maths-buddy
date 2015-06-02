@@ -229,22 +229,20 @@ $(document).ready(function() {
     });
 
     $('.button-add-statistiques').click(function() {
-        //Modify hidden value for AJAX POST
+        //Modify hidden value for cut/past the content to the selected div
         var currentVal = parseInt($("#nombre_vars_statistiques").val());
         if (!isNaN(currentVal)) {
             currentVal = currentVal + 1;
             $("#nombre_vars_statistiques").val(currentVal);
         }
         //Add div
-        $('#add-div-statistiques').append('<div id="add-otf-statistiques_' +
-            currentVal +
-            '" style="padding-bottom:0.5em"><input id="statistiques_numero_' +
-            currentVal + '" name="statistiques_numero_' +
-            currentVal + '" placeholder="Nombre" class="dynamic-element" style="display: inline;" type="text"></input><a class="button button-dynamic" style="float: right;" onClick="$(this).Remove_Row(' +
-            currentVal + ', 1);">-</a></div>'
-        );
+        $('#add-div-statistiques').append('<div><table class="dynamic-element" style="float: left; margin-bottom:10px;"><tr><td class="padding-left-td"><input class="input-text-double" name="statistiques_nom_[]"  id="statistiques_nom_' + 
+        currentVal + '" placeholder="Nom" type="text"></input></td><td><input class="input-text-double" name="statistiques_numero_[]" id="statistiques_numero_' + 
+        currentVal + '" placeholder="Valeur" type="text"></input></td></tr></table><a class="button button-dynamic" style="float: right;" onClick="$(this).Remove_Row();">-</a></div>');
         //Copy & reset values on the newly created div
+        $("#statistiques_nom_" + currentVal).val($("#statistiques_nom_1").val());
         $("#statistiques_numero_" + currentVal).val($("#statistiques_numero_1").val());
+        $("#statistiques_nom_1").val("");
         $("#statistiques_numero_1").val("");
         //If send button isn't visible
         if (!$('#send-button-statistiques').visible()) {
@@ -255,44 +253,26 @@ $(document).ready(function() {
         }
     });
 
-    $.fn.Remove_Row = function(id, type) {
-        if (type == 1) {
-            var currentVal = parseInt($("#nombre_vars_statistiques").val());
-            if (!isNaN(currentVal)) {
-                currentVal = currentVal - 1;
-                $("#nombre_vars_statistiques").val(currentVal);
-            }
-            $(this).closest("#add-otf-statistiques_" + id).remove();
-        } else if (type == 2) {
-            var currentVal = parseInt($("#nombre_vars_v_aleatoire").val());
-            if (!isNaN(currentVal)) {
-                currentVal = currentVal - 1;
-                $("#nombre_vars_v_aleatoire").val(currentVal);
-            }
-            $(this).closest("#add-otf-v-aleatoire_" + id).remove();
-        }
+    $.fn.Remove_Row = function() {
+            $(this).parent('div').remove();
     };
 
     $('.button-add-v-aleatoire').click(function() {
+        //Modify hidden value for cut/past the content to the selected div
         var currentVal = parseInt($("#nombre_vars_v_aleatoire").val());
         if (!isNaN(currentVal)) {
             currentVal = currentVal + 1;
             $("#nombre_vars_v_aleatoire").val(currentVal);
         }
-        $('#add-div-v-aleatoire').append('<div id="add-otf-v-aleatoire_' +
-            currentVal + '"><table class="dynamic-element" style="float: left; margin-bottom:10px;"><tr><td class="padding-left-td"><input id="v_aleatoire_x_' +
-            currentVal + '" class="input-text-v-aleatoire" name="v_aleatoire_x_' +
-            currentVal + '" placeholder="X" type="text"></input></td><td><input id="v_aleatoire_proba_x_' +
-            currentVal + '" class="input-text-v-aleatoire" name="v_aleatoire_proba_x_' +
-            currentVal + '" placeholder="Probabilité de X" type="text"></input></td></tr></table><a class="button button-dynamic" style="float: right;" onClick="$(this).Remove_Row(' +
-            currentVal + ', 2);">-</a></div>'
-        );
+        $('#add-div-v-aleatoire').append('<div><table class="dynamic-element" style="float: left; margin-bottom:10px;"><tr><td class="padding-left-td"><input class="input-text-v-aleatoire" name="v_aleatoire_x_[]"  id="v_aleatoire_x_' + 
+        currentVal + '" placeholder="X" type="text"></input></td><td><input class="input-text-v-aleatoire" name="v_aleatoire_proba_x_[]" id="v_aleatoire_proba_x_' + 
+        currentVal + '" placeholder="Probabilité de X" type="text"></input></td></tr></table><a class="button button-dynamic" style="float: right;" onClick="$(this).Remove_Row();">-</a></div>');
         //Copy & reset values on the newly created div
         $("#v_aleatoire_x_" + currentVal).val($("#v_aleatoire_x_1").val());
         $("#v_aleatoire_proba_x_" + currentVal).val($("#v_aleatoire_proba_x_1").val());
         $("#v_aleatoire_x_1").val("");
         $("#v_aleatoire_proba_x_1").val("");
-
+        //Scroll if button not visible
         if (!$('#send-button-v-aleatoire').visible()) {
             $("html, body").animate({
                 scrollTop: $('#send-button-v-aleatoire').offset().top +
@@ -316,8 +296,11 @@ $(document).ready(function() {
       }
     });
     
-    //AJAX Calls
+    /*
+      AJAX Calls
+    */
 
+    //Second degré
     $("#form-second-degre").submit(function(event) {
         // Stop form from submitting normally
         event.preventDefault();
@@ -352,6 +335,41 @@ $(document).ready(function() {
             }
         });
     });
-
+    
+    //Statistiques
+    $("#form-statistiques").submit(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var postData = $(this).serializeArray();
+        $( "#result-statistiques" ).html( '<img src="images/ajax_loading.gif" alt="Chargement...">' );
+        $.ajax(
+        {
+            url : 'assets/ajax/statistiques.php?api=0',
+            type: "POST",
+            data : postData,
+            success:function(data, textStatus, jqXHR) 
+            {
+                $( "#result-statistiques" ).html( data );
+                if (!$('#bottom-result-statistiques').visible(true)) {
+                    $("html, body").animate({
+                        scrollTop: $('#bottom-result-statistiques').offset().top +
+                            -$(window).height() + 50
+                    }, 500);
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) 
+            {
+                $( "#result-statistiques" ).html( "" );
+                $( "#dialog-error-ajax" ).dialog({
+                  height: "auto",
+                  width: "auto",
+                  modal: true,
+                  resizable: false,
+                  draggable: false,
+                  dialogClass: 'success-dialog'
+                }); 
+            }
+        });
+    });
 });
 

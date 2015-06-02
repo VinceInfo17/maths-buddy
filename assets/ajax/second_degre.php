@@ -48,6 +48,7 @@ if(isset($_POST["a"]) && isset($_POST["b"]) && isset($_POST["c"]) && isset($_POS
 						$tab_result = array();
 						$tab_derive = array();
 						$html = "";
+						$result_api = "";
 						$index = 0;
 						//Check if parameters are ignored
 						if(isset($error_result_ignored_interval)){
@@ -71,20 +72,29 @@ if(isset($_POST["a"]) && isset($_POST["b"]) && isset($_POST["c"]) && isset($_POS
 						//Delta
 						$delta = ($_POST["b"] * $_POST["b"]) - 4 *($_POST["a"] * $_POST["c"]);
 						//Chart JS
-						$data_charts = create_graph_date($tab_absisses, $tab_result, $tab_derive);
+						$data_charts = create_graph_date_second_degre($tab_absisses, $tab_result, $tab_derive);
 						if($delta > 0){
 							$x1 = (-$_POST["b"] + sqrt($delta)) / ( 2 * $_POST["a"] );
 							$x2 = (-$_POST["b"] - sqrt($delta)) / ( 2 * $_POST["a"] );
-							$result_api = json_encode(array("error" => "no", "nb_solution" => "2", "delta" => $delta, "x1" => $x1, "x2" => $x2, "derivee" => $derivee, "tab_absisses" => $tab_absisses, "results" => $tab_result, "tab_derive" => $tab_derive));
-							$html .= "Delta : " . $delta . "<br/>Il y a deux solutions :<br/> X1 : " . $x1 . "<br/>X2 : " . $x2 . "<br/>Dérivée : ". $derivee;
-						}else if($delta == 0){
+							if($api){
+								$result_api = json_encode(array("error" => "no", "nb_solution" => "2", "delta" => $delta, "x1" => $x1, "x2" => $x2, "derivee" => $derivee, "tab_absisses" => $tab_absisses, "results" => $tab_result, "tab_derive" => $tab_derive));
+							}else{
+								$html .= "Delta : " . $delta . "<br/>Il y a deux solutions :<br/> X1 : " . $x1 . "<br/>X2 : " . $x2 . "<br/>Dérivée : ". $derivee;
+							}
+							}else if($delta == 0){
 							$x1 = (-$_POST["b"]) + ( 2 * $_POST["a"] );
-							$result_api = json_encode(array("error" => "no", "nb_solution" => "1", "delta" => $delta, "x1" => $x1, "derivee" => $derivee, "tab_absisses" => $tab_absisses, "results" => $tab_result, "tab_derive" => $tab_derive));
-							$html .= "Delta : " . $delta . "<br/>Il y a une solution :<br/> X1 : " . $x1 . "<br/>Dérivée : ". $derivee;
+							if($api){
+								$result_api = json_encode(array("error" => "no", "nb_solution" => "1", "delta" => $delta, "x1" => $x1, "derivee" => $derivee, "tab_absisses" => $tab_absisses, "results" => $tab_result, "tab_derive" => $tab_derive));
+							}else{
+								$html .= "Delta : " . $delta . "<br/>Il y a une solution :<br/> X1 : " . $x1 . "<br/>Dérivée : ". $derivee;
+							}
 						}else{
 							$x1_2 = "((-" . $_POST["b"] . ") ± i * sqrt(" . $delta . ")) / 2 * " . $_POST["a"];
-							$result_api = json_encode(array("error" => "no", "nb_solution" => "2i", "delta" => $delta, "x1_2" => $x1_2, "derivee" => $derivee, "tab_absisses" => $tab_absisses, "results" => $tab_result, "tab_derive" => $tab_derive));
-							$html .= "Delta : " . $delta . "<br/>Il y a deux solutions imaginaires :<br/> X1 & 2 : " . $x1_2 . "<br/>Dérivée : ". $derivee;
+							if($api){
+								$result_api = json_encode(array("error" => "no", "nb_solution" => "2i", "delta" => $delta, "x1_2" => $x1_2, "derivee" => $derivee, "tab_absisses" => $tab_absisses, "results" => $tab_result, "tab_derive" => $tab_derive));
+							}else{
+								$html .= "Delta : " . $delta . "<br/>Il y a deux solutions imaginaires :<br/> X1 & 2 : " . $x1_2 . "<br/>Dérivée : ". $derivee;
+							}
 						}
 						api_check($api,$result_api,$html);
 					}
@@ -102,6 +112,6 @@ if(isset($_POST["a"]) && isset($_POST["b"]) && isset($_POST["c"]) && isset($_POS
 
 //If the graph data is present, we show the graph
 if(isset($data_charts) && !$api){
-	show_graph($data_charts);
+	echo show_graph_line($data_charts, "line", "graph_second_degre");
 }
 ?>

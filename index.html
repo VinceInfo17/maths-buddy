@@ -181,8 +181,8 @@
                                         </tr>
                                 </table>
                             </div>
-                            <div class="12u$" style="padding-top:1em;padding-bottom: 1em;">
-                                <input type="submit" name="send-button-second-degre" value="Envoyer !"> </div>
+                            <div class="12u$" style="padding-top:1em;padding-bottom: 0.5em;">
+                                <input type="submit" id="send-button-second-degre" value="Envoyer !"> </div>
                         </div>
                     </form>
                     <div id="result-second-degre" class="result-div"></div>
@@ -196,19 +196,30 @@
                         <h3>Statistiques</h3>
                     </header>
                     <p>Calcul de moyenne et d'écart type</p>
-                    <form action="#" method="post">
+                    <form method="post" id="form-statistiques">
                         <div>
                             <div style="padding-bottom: 2em;">
                                 <div id="add-div-statistiques"></div>
                                 <div>
-                                    <input id="statistiques_numero_1" name="statistiques_numero_1" placeholder="Nombre" class="dynamic-element" style="display:inline;" type="text"></input>
+                                    <table class="dynamic-element" style="float: left;">
+                                        <tr>
+                                            <td class="padding-left-td">
+                                                <input id="statistiques_nom_1" class="input-text-double" name="statistiques_nom_[]" placeholder="Nom" type="text"></input>
+                                            </td>
+                                            <td>
+                                                <input id="statistiques_numero_1" class="input-text-double" name="statistiques_numero_[]" placeholder="Valeur" type="text"></input>
+                                            </td>
+                                        </tr>
+                                    </table>
                                     <a class="button button-dynamic button-add-statistiques" style="float: right;">+</a>
                                 </div>
-                                <input id="nombre_vars_statistiques" name="nombre_vars_statistiques" type="hidden" value="1"></input>
                             </div>
-                            <div class="12u$">
+                            <div class="12u$" style="padding-top:1em;padding-bottom: 0.5em;">
                                 <input id="send-button-statistiques" type="submit" value="Envoyer !">
                             </div>
+                            <input id="nombre_vars_statistiques" name="nombre_vars_statistiques" type="hidden" value="1">
+                            <div id="result-statistiques" class="result-div"></div>
+                            <div id="bottom-result-statistiques"></div>
                         </div>
                     </form>
                 </div>
@@ -354,10 +365,10 @@
                                     <table class="dynamic-element" style="float: left;">
                                         <tr>
                                             <td class="padding-left-td">
-                                                <input id="v_aleatoire_x_1" class="input-text-v-aleatoire" name="v_aleatoire_x_1" placeholder="X" type="text"></input>
+                                                <input id="v_aleatoire_x_1" class="input-text-double" name="v_aleatoire_x_[]" placeholder="X" type="text"></input>
                                             </td>
                                             <td>
-                                                <input id="v_aleatoire_proba_x_1" class="input-text-v-aleatoire" name="v_aleatoire_proba_x_1" placeholder="Probabilité de X" type="text"></input>
+                                                <input id="v_aleatoire_proba_x_1" class="input-text-double" name="v_aleatoire_proba_x_[]" placeholder="Probabilité de X" type="text"></input>
                                             </td>
                                         </tr>
                                     </table>

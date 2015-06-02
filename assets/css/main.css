@@ -2428,7 +2428,7 @@ button:active,
         margin-top: 0;
     }
     .type-saisie-radio {
-        font-size: 0.9em !important;
+        font-size: 0.8em !important;
     }
     .sub-menu-icon {
         margin-left: 1.7em !important;
@@ -2536,7 +2536,7 @@ tr.spaceUnder > td {
     width: -moz-calc(100% - 80px) !important;
 }
 
-.input-text-v-aleatoire {
+.input-text-double {
     width: 100%;
 }
 

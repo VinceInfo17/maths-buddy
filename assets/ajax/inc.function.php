@@ -16,7 +16,7 @@ function api_check($api, $api_message, $normal_message){
 	}
 }
 
-function create_graph_date($labels, $tab_result, $tab_derive){
+function create_graph_date_second_degre($labels, $tab_result, $tab_derive){
 	$result = 'labels: ' . json_encode($labels) . ',
 	datasets: [{
         title: "Résultats",
@@ -40,18 +40,42 @@ function create_graph_date($labels, $tab_result, $tab_derive){
     return $result;
 }
 
-function show_graph($data_charts){
-	echo '<br/><div style="width:100%"><canvas id="graph_canvas"></canvas></div>
+function create_graph_statistiques($labels, $data){
+	$result = 'labels: ' . json_encode($labels) . ',
+	datasets: [{
+        title: "Valeurs",
+        fillColor: "rgba(151,187,205,0.5)",
+        strokeColor: "rgba(151,187,205,0.8)",
+        highlightFill: "rgba(151,187,205,0.75)",
+        highlightStroke: "rgba(151,187,205,1)",
+        data: ' . json_encode($data) . '
+    }]';
+    return $result;
+}
+
+function show_graph_line($data_charts, $type, $name){
+	$html = '<br/><div style="width:100%"><canvas id="'. $name .'"></canvas></div>
 	<script>
-		var data = {
+		var data_'.$name.' = {
 			'. $data_charts .'
 		}
-		var options = {
+		var options_'.$name.' = {
 		    responsive: true,
+		    scaleBeginAtZero: false
 		}
 		// Get the context of the canvas element we want to select
-		var ctx = document.getElementById("graph_canvas").getContext("2d");
-		var myNewChart = new Chart(ctx).Line(data, options);
-	</script>';
+		var ctx = document.getElementById("'.$name.'").getContext("2d");';
+	switch ($type) {
+		case 'line':
+			$html .= 'var myNewChart_'.$name.' = new Chart(ctx).Line(data_'.$name.', options_'.$name.');</script>';
+			break;
+		case 'bar':
+			$html .= 'var myNewChart_'.$name.' = new Chart(ctx).Bar(data_'.$name.', options_'.$name.');</script>';
+			break;
+		default:
+			# code...
+			break;
+	}
+	return $html;
 }
 ?>
