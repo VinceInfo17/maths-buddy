@@ -2382,6 +2382,12 @@ button:active,
 
 @media screen and (max-width: 736px) {
     /* Basic */
+    .table-result-show th {
+        font-size: 0.9em !important;
+    }
+    .table-result-show td {
+      font-size: 0.8em !important;
+    }
     
     body,
     input,

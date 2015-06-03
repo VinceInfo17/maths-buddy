@@ -71,7 +71,8 @@ function show_graph_line($data_charts, $type, $name, $negative,$show_data){
 	}
 	$html .= '}
 		// Get the context of the canvas element we want to select
-		var ctx = document.getElementById("'.$name.'").getContext("2d");';
+		var ctx = document.getElementById("'.$name.'").getContext("2d");
+		';
 	switch ($type) {
 		case 'line':
 			$html .= 'var myNewChart_'.$name.' = new Chart(ctx).Line(data_'.$name.', options_'.$name.');</script>';
