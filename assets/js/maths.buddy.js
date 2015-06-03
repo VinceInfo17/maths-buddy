@@ -389,7 +389,6 @@ $(document).ready(function() {
                 $("html, body").animate({
                     scrollTop: $('#result-loi-binomiale').offset().top - 6
                 }, 500);
-                
             },
             error: function(jqXHR, textStatus, errorThrown) 
             {
