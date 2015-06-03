@@ -113,6 +113,6 @@ if(isset($_POST["statistiques_nom_"]) && isset($_POST["statistiques_numero_"])){
 
 //If the graph data is present, we show the graph
 if(isset($data_charts) && !$api){
-	echo show_graph_line($data_charts, "bar", "graph_statistiques", $negative_graph);
+	echo show_graph_line($data_charts, "bar", "graph_statistiques", $negative_graph,true);
 }
 ?>

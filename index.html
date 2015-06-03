@@ -231,7 +231,7 @@
                         <h3>Loi binomiale</h3>
                     </header>
                     <p>Calcul de la loi binomiale</p>
-                    <form action="#" method="post">
+                    <form method="post" id="form-loi-binomiale">
                         <div>
                             <div style="width:100%;">
                                 <table>
@@ -247,8 +247,10 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="12u$">
-                                <input type="submit" name="send-button-loi-binomiale" value="Envoyer !"> </div>
+                            <div class="12u$" style="padding-bottom: 0.5em;">
+                                <input type="submit" name="send-button-loi-binomiale" value="Envoyer !">
+                            </div>
+                            <div id="result-loi-binomiale" class="result-div"></div>
                         </div>
                     </form>
                 </div>
@@ -605,7 +607,7 @@
         </ul>
     </div>
     <!-- Error AJAX dialog -->
-    <div id="dialog-error-ajax" title="Erreur chargement">
+    <div id="dialog-error-ajax" style="display: none" title="Erreur chargement">
       Impossible de charger l'API.<br/>Veuillez vérifier votre connexion internet.
     </div>
     <!-- Scripts -->

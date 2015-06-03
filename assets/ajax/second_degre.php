@@ -112,6 +112,6 @@ if(isset($_POST["a"]) && isset($_POST["b"]) && isset($_POST["c"]) && isset($_POS
 
 //If the graph data is present, we show the graph
 if(isset($data_charts) && !$api){
-	echo show_graph_line($data_charts, "line", "graph_second_degre",true);
+	echo show_graph_line($data_charts, "line", "graph_second_degre",true,true);
 }
 ?>

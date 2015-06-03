@@ -53,13 +53,15 @@ function create_graph_statistiques($labels, $data){
     return $result;
 }
 
-function show_graph_line($data_charts, $type, $name, $negative){
-	$html = '<br/><div style="width:100%"><canvas id="'. $name .'"></canvas></div>
-	<script>
-		var data_'.$name.' = {
-			'. $data_charts .'
-		}
-		var options_'.$name.' = {
+function show_graph_line($data_charts, $type, $name, $negative,$show_data){
+	$html = '<br/><div id="div_'. $name .'" style="width:100%;"><div><canvas id="'. $name .'"></canvas></div></div><script>';
+	if($show_data){
+		$html .= 'var data_'.$name.' = {
+					'. $data_charts .'
+				}';
+	}	
+	$html .= '
+	var options_'.$name.' = {
 		    responsive: true,
 		    scaleBeginAtZero: ';
 	if($negative){

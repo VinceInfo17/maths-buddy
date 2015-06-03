@@ -2461,7 +2461,6 @@ tr.spaceUnder > td {
 .input-table-radio {
     font-size: 3em;
     top: 0.25em;
-    position: relative;
 }
 
 .row-equation {
@@ -2625,4 +2624,35 @@ tr.spaceUnder > td {
 #table-parameters-second-degre {
   width: 60%;
   margin: 0 auto;
+}
+
+.table-result-show {
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  width: auto;
+  overflow: auto;
+    border-collapse: separate;
+  border-spacing: 2px;
+  margin: 0 auto;
+  border-radius: 0.15em;
+}
+.table-result-show th {
+  background-color: #8ebebc;
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("images/overlay.png");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("images/overlay.png");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("images/overlay.png");
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("images/overlay.png");
+  font-weight: normal;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 0.15em;
+}
+.table-result-show td {
+  background-color: #dce3e2;
+  padding: 5px 10px;
+  text-align: left;
+  color: rgb(111, 111, 111);
+  font-size: 0.9em;
+  border-radius: 0.15em;
 }
