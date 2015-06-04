@@ -1,3 +1,4 @@
 - Padding dynamic button, iPhone fixed but not proper, iPad issue
 - Scroll fix for Loi Binomiale, sometimes it go crazy (small bug)
 - [RANDOM] Graphs responsive on desktop, but not on mobile when doing a second calc
+- Check if array contain NAN values for graphs !!

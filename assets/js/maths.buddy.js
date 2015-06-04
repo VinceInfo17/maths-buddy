@@ -404,5 +404,38 @@ $(document).ready(function() {
             }
         });
     });
+
+    //Loi binomiale
+    $("#form-loi-poisson").submit(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var postData = $(this).serializeArray();
+        $( "#result-loi-poisson" ).html( '<img src="images/ajax_loading.gif" alt="Chargement...">' );
+        $.ajax(
+        {
+            url : 'assets/ajax/loi_poisson.php?api=0',
+            type: "POST",
+            data : postData,
+            success:function(data, textStatus, jqXHR) 
+            {
+                $( "#result-loi-poisson" ).html( data );
+                $("html, body").animate({
+                    scrollTop: $('#result-loi-poisson').offset().top - 6
+                }, 500);
+            },
+            error: function(jqXHR, textStatus, errorThrown) 
+            {
+                $( "#result-loi-poisson" ).html( "" );
+                $( "#dialog-error-ajax" ).dialog({
+                  height: "auto",
+                  width: "auto",
+                  modal: true,
+                  resizable: false,
+                  draggable: false,
+                  dialogClass: 'success-dialog'
+                }); 
+            }
+        });
+    });
 });
 

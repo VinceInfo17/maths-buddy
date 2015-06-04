@@ -251,7 +251,7 @@
                                 <input name="send-button-loi-binomiale" type="submit" value="Envoyer !">
                             </div>
                             <div id="result-loi-binomiale" class="result-div"></div>
-                            <div id="bottom-result-loi-binomiale"></div>
+                            <div id="bottom-result-loi_binomiale"></div>
                         </div>
                     </form>
                 </div>
@@ -322,12 +322,12 @@
                         <h3>Loi de Poisson</h3>
                     </header>
                     <p>Calcul de la loi de Poisson</p>
-                    <form action="#" method="post">
+                    <form method="post" id="form-loi-poisson">
                         <div>
                             <div>
                                 <div class="type-saisie-radio" id="type-saisie-loi-poisson">
                                     <input checked id="radio-type-loi-poisson-1" name="radio-saisie-loi-poisson" type="radio" value="1">
-                                    <label for="radio-type-loi-poisson-1">P & N</label>
+                                    <label for="radio-type-loi-poisson-1">P</label>
                                     <input id="radio-type-loi-poisson-2" name="radio-saisie-loi-poisson" type="radio" value="2">
                                     <label for="radio-type-loi-poisson-2">Lambda</label>
                                 </div>
@@ -348,8 +348,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="12u$">
-                            <input type="submit" name="send-button-loi-poisson" value="Envoyer !"> </div>
+                        <div class="12u$" style="padding-bottom: 0.5em;">
+                            <input type="submit" name="send-button-loi-poisson" value="Envoyer !">
+                        </div>
+                        <div id="result-loi-poisson" class="result-div"></div>
+                        <div id="bottom-result-loi_poisson"></div>
                     </form>
                 </div>
             </section>
